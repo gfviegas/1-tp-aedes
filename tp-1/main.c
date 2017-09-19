@@ -10,6 +10,6 @@
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    printf("Outra coisa\n");
+    printf("i have no strong feelings one way or the other\n");
     return 0;
 }
