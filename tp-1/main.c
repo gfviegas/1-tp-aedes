@@ -10,6 +10,6 @@
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    printf("Heitor da a bunda\n");
+    printf("arthur da a bunda\n");
     return 0;
 }
