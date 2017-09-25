@@ -12,7 +12,7 @@ typedef struct celula{
 typedef struct{
     Apontador pPrimeiro;
     Apontador pUltimo;
-    int NumeroLinhas;
+    int QntdItens;
 }Tlista;
 
 
@@ -22,8 +22,11 @@ void InsereNovoNumeroLinha(Tlista *lista, int numero);
 
 void RetiraNumeroLinha(Tlista *lista);
 
+int VerificaNLinha(Tlista *lista, int numero);
 
+int RetornaQntdLinhas(Tlista *lista);
 
+void ImprimeLinhas(Tlista *lista);
 
 
 #endif // NUMEROLINHA_H_INCLUDED
