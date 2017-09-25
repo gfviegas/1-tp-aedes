@@ -14,10 +14,17 @@ As operações deste TAD devem ser, pelo menos:
 
 //TAD do tipo palavra(falta lista de numero de linhas)
 typedef struct{
+    int numero;
+}Tlista;
+
+typedef struct{
     char cadeiaDeCaracteres[32];
+    Tlista TadNumeroLinhas;
 }Tpalavra;
 
 void criaPalavraVazia(Tpalavra *palavra);
+
+void iniciaNlinhas(Tlista *lista);
 
 void preencheCadeiaDeCaracteres(Tpalavra *palavra, char *Preenchimento);
 
@@ -25,7 +32,7 @@ void imprimeCadeiaDeCaracteres(Tpalavra *palavra);
 
 void imprimePalavra(Tpalavra *palavra);
 
-//*char retornaCadeiaDeCaraacteres(Tpalavra *palavra);
+char *retornaCadeiaDeCaracteres(Tpalavra *palavra);
 
 
 
