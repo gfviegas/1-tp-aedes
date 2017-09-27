@@ -25,8 +25,8 @@
 #include <stdio.h>
 #include "Palavra.h"
 
-typedef struct Celula* ApontadorPalavra;
-typedef struct Celula {
+typedef struct CelulaPalavra* ApontadorPalavra;
+typedef struct CelulaPalavra {
     Palavra info;
     ApontadorPalavra proximo;
 } CelulaPalavra;
