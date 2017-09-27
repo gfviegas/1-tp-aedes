@@ -14,7 +14,7 @@ void criaListaDePalavras(ListaDePalavras * lista) {
     lista->primeiro = (ApontadorPalavra) malloc(sizeof(CelulaPalavra));
     lista->ultimo = lista->primeiro;
     lista->primeiro->proximo = NULL;
-    lista->numeroPalavras = 0;
+    lista->quantidadePalavras = 0;
 }
 
 
@@ -25,7 +25,7 @@ void insereNovaPalavraFinal(ListaDePalavras * lista, Palavra * palavra) {
 
     lista->ultimo->info = *palavra;
     lista->ultimo->proximo = NULL;
-    lista->numeroPalavras++;
+    lista->quantidadePalavras++;
 }
 
 // Remove uma palavra no final da lista linear de palavras.
@@ -40,7 +40,7 @@ void removePalavraFinal(ListaDePalavras * lista) {
     free(ultimo);
     penultimo->proximo = NULL;
     lista->ultimo = penultimo;
-    lista->numeroPalavras--;
+    lista->quantidadePalavras--;
 }
 
 // Remove uma palavra específica da lista linear de palavras.
@@ -59,7 +59,7 @@ void removePalavra(ListaDePalavras * lista, Palavra * palavra) {
 
     penultimo->proximo = ultimo->proximo;
     free(ultimo);
-    lista->numeroPalavras--;
+    lista->quantidadePalavras--;
 }
 
 
@@ -79,8 +79,8 @@ int verificaPalavra(ListaDePalavras * lista, Palavra * palavra) {
 }
 
 // Retorna o número de palavras em uma lista linear de palavras.
-int numeroPalavras(ListaDePalavras * lista) {
-    return lista->numeroPalavras;
+int quantidadePalavras(ListaDePalavras * lista) {
+    return lista->quantidadePalavras;
 }
 
 // Imprime os dados de uma lista linear de palavras.

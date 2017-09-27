@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "TadPalavra.h"
+#include "Palavra.h"
 #include "NumeroLinha.h"
 
 int main(){
 
-    Tpalavra palavra;
+    Palavra palavra;
     char *string;
 
     string = "biscoito";

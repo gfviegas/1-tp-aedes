@@ -34,7 +34,7 @@ typedef struct Celula {
 typedef struct {
     ApontadorPalavra primeiro;
     ApontadorPalavra ultimo;
-    int numeroPalavras;
+    int quantidadePalavras;
 } ListaDePalavras;
 
 // Cria uma lista de palavras.
@@ -54,7 +54,7 @@ void removePalavraFinal(ListaDePalavras * lista);
 int verificaPalavra(ListaDePalavras * lista, Palavra * palavra);
 
 // Retorna o número de palavras em uma lista linear de palavras.
-int numeroPalavras(ListaDePalavras * lista);
+int quantidadePalavras(ListaDePalavras * lista);
 
 // Imprime os dados de uma lista linear de palavras.
 void imprimeListaPalavras(ListaDePalavras * lista);

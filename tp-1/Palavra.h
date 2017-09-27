@@ -1,22 +1,35 @@
-//
-//  Palavra.h
-//  tp-1
-//
-//  Created by Viegas on 21/09/17.
-//  Copyright Â© 2017 Ciencia da Computacao - UFV. All rights reserved.
-//
+#ifndef PALAVRA_H_INCLUDED
+#define PALAVRA_H_INCLUDED
+#include <string.h>
+#include "NumeroLinha.h"
+/*Em seguida, será necessário que você implemente o TAD Palavra. Cada elemento do tipo
+Palavra deverá ser representado por uma cadeia de caracteres (a palavra efetivamente) e uma
+lista linear que informa as linhas em que a palavra apareceu (TAD Lista de Números de Linha).
+As operações deste TAD devem ser, pelo menos:
+- Cria Palavra vazia
+- Preenche cadeia de caracteres
+- Retorna cadeia de caracteres
+- Imprime cadeia de caracteres
+- Imprime Palavra (cadeia de caracteres + TAD Lista de Números de linha)
+*/
 
-#ifndef Palavra_h
-#define Palavra_h
+//TAD do tipo palavra(falta lista de numero de linhas)
+#define MAXTAMPALAVRA 32
+typedef struct{
+    char valor[MAXTAMPALAVRA];
+    ListaLinhas lista;
+}Palavra;
 
-#include <stdio.h>
-#include <stdlib.h>
+void criaPalavraVazia(Palavra *palavra);
 
-typedef struct {
-    char texto[300];
-} Palavra;
+void preencheCadeiaDeCaracteres(Palavra *palavra, char *Preenchimento);
+
+void imprimeCadeiaDeCaracteres(Palavra *palavra);
+
+void imprimePalavra(Palavra *palavra);
+
+char *retornaCadeiaDeCaracteres(Palavra *palavra);
 
 
-void criaPalavra(Palavra* novaPalavra, char *texto);
 
-#endif /* Palavra_h */
+#endif // PALAVRA_H_INCLUDED

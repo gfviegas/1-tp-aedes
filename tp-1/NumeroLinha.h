@@ -2,31 +2,31 @@
 #define NUMEROLINHA_H_INCLUDED
 
 
-typedef struct celula* Apontador;
-typedef struct celula{
-    int Nlinha;
-    Apontador pProx;
-}Tcelula;
+typedef struct CelulaLinhas* ApontadorCelulaLinhas;
+typedef struct CelulaLinhas{
+    int numeroLinha;
+    ApontadorCelulaLinhas proximo;
+}CelulaLinhas;
 
 
 typedef struct{
-    Apontador pPrimeiro;
-    Apontador pUltimo;
-    int QntdItens;
-}Tlista;
+    ApontadorCelulaLinhas primeiro;
+    ApontadorCelulaLinhas ultimo;
+    int quantidadeItens;
+}ListaLinhas;
 
 
-void CriaListaNLinhas(Tlista *lista);
+void CriaListaNLinhas(ListaLinhas *lista);
 
-void InsereNovoNumeroLinha(Tlista *lista, int numero);
+void InsereNovoNumeroLinha(ListaLinhas *lista, int numero);
 
-void RetiraNumeroLinha(Tlista *lista);
+void RetiraNumeroLinha(ListaLinhas *lista);
 
-int VerificaNLinha(Tlista *lista, int numero);
+int VerificaNLinha(ListaLinhas *lista, int numero);
 
-int RetornaQntdLinhas(Tlista *lista);
+int RetornaQntdLinhas(ListaLinhas *lista);
 
-void ImprimeLinhas(Tlista *lista);
+void ImprimeLinhas(ListaLinhas *lista);
 
 
 #endif // NUMEROLINHA_H_INCLUDED
