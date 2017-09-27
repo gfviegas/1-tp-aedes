@@ -43,10 +43,11 @@ void RetiraNumeroLinha(Tlista *lista){
 int VerificaNLinha(Tlista *lista, int numero){
     Tcelula *ultimo = lista->pPrimeiro->pProx;
     int Existe = 0;
-    while(ultimo->pProx != NULL && Existe == 0){
-        if(lista->pUltimo->Nlinha == numero)
-        printf("lista -> ultimo -> linhas = %d\nnumero = %d",)
+    while(ultimo != NULL && Existe == 0){
+        if(ultimo->Nlinha == numero){
+            printf("lista -> ultimo -> linhas = %d\nnumero = %d",ultimo->Nlinha, numero);
             Existe = 1;
+        }
         ultimo = ultimo->pProx;
     }
     return(Existe);
@@ -61,10 +62,5 @@ void ImprimeLinhas(Tlista *lista){
    while(ultimo != NULL){
         printf("%d\n", ultimo->Nlinha);
         ultimo = ultimo->pProx;
-   };
-
-
-
-
-
-}
+   }
+};

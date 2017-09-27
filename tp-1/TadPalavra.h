@@ -1,6 +1,7 @@
 #ifndef TADPALAVRA_H_INCLUDED
 #define TADPALAVRA_H_INCLUDED
 #include <string.h>
+#include "NumeroLinha.h"
 /*Em seguida, será necessário que você implemente o TAD Palavra. Cada elemento do tipo
 Palavra deverá ser representado por uma cadeia de caracteres (a palavra efetivamente) e uma
 lista linear que informa as linhas em que a palavra apareceu (TAD Lista de Números de Linha).
@@ -13,18 +14,13 @@ As operações deste TAD devem ser, pelo menos:
 */
 
 //TAD do tipo palavra(falta lista de numero de linhas)
+#define MAXTAMPALAVRA 32
 typedef struct{
-    int numero;
-}Tlista;
-
-typedef struct{
-    char cadeiaDeCaracteres[32];
-    Tlista TadNumeroLinhas;
+    char cadeiaDeCaracteres[MAXTAMPALAVRA];
+    Tlista lista;
 }Tpalavra;
 
-void criaPalavraVazia(Tpalavra *palavra);
-
-void iniciaNlinhas(Tlista *lista);
+void criaPalavraVazia(Tpalavra *palavra, Tlista *lista);
 
 void preencheCadeiaDeCaracteres(Tpalavra *palavra, char *Preenchimento);
 

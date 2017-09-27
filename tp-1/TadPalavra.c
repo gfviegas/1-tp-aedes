@@ -1,13 +1,10 @@
 #include "TadPalavra.h"
 #include <stdlib.h>
 #include <string.h>
-
-void criaPalavraVazia(Tpalavra *palavra){
-    palavra = (Tpalavra *)malloc(32 * sizeof(char));
-};
-
-void iniciaNlinhas(Tlista *lista){
-    lista->numero = 32;
+#include "NumeroLinha.h"
+void criaPalavraVazia(Tpalavra *palavra, Tlista *lista){
+    palavra = (Tpalavra *)malloc(sizeof(Tpalavra));
+    palavra->lista = *lista;
 };
 
 void preencheCadeiaDeCaracteres(Tpalavra *palavra, char *Preenchimento){
@@ -19,10 +16,11 @@ void imprimeCadeiaDeCaracteres(Tpalavra *palavra){
 };
 
 void imprimePalavra(Tpalavra *palavra){
-  printf("%s", palavra->cadeiaDeCaracteres);
-  printf("%d", palavra->TadNumeroLinhas->primeiro->info.numero);
+  printf("Palavra: %s. Linhas: ", palavra->cadeiaDeCaracteres);
+  ImprimeLinhas((palavra->&lista));
+  //printf("%d", RetornaQntdLinhas(&(palavra->lista)));
 };
 
 char *retornaCadeiaDeCaracteres(Tpalavra *palavra){
     return palavra->cadeiaDeCaracteres;
-}
+};

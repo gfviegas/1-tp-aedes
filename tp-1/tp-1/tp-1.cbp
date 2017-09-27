@@ -31,6 +31,25 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="../ListaDePalavras.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../ListaDePalavras.h" />
+		<Unit filename="../NumeroLinha.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../NumeroLinha.h" />
+		<Unit filename="../Palavra.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../Palavra.h" />
+		<Unit filename="../TadPalavra.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../TadPalavra.h" />
+		<Unit filename="../main.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Extensions>
 			<envvars />
 			<code_completion />

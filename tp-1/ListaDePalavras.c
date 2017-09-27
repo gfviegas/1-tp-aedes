@@ -22,7 +22,7 @@ void criaListaDePalavras(ListaDePalavras * lista) {
 void insereNovaPalavraFinal(ListaDePalavras * lista, Palavra * palavra) {
     lista->ultimo->proximo = (ApontadorPalavra) malloc(sizeof(CelulaPalavra));
     lista->ultimo = lista->ultimo->proximo;
-    
+
     lista->ultimo->info = *palavra;
     lista->ultimo->proximo = NULL;
     lista->numeroPalavras++;
@@ -32,7 +32,7 @@ void insereNovaPalavraFinal(ListaDePalavras * lista, Palavra * palavra) {
 void removePalavraFinal(ListaDePalavras * lista) {
     CelulaPalavra *ultimo = lista->primeiro->proximo;
     CelulaPalavra *penultimo = NULL;
-    
+
     while (ultimo->proximo != NULL) {
         penultimo = ultimo;
         ultimo = ultimo->proximo;
@@ -47,16 +47,16 @@ void removePalavraFinal(ListaDePalavras * lista) {
 void removePalavra(ListaDePalavras * lista, Palavra * palavra) {
     CelulaPalavra *ultimo = lista->primeiro->proximo;
     CelulaPalavra *penultimo = NULL;
-    
+
     while (ultimo->proximo != NULL && strcmp(ultimo->info.texto, palavra->texto) != 0) {
         penultimo = ultimo;
         ultimo = ultimo->proximo;
     }
-    
+
     if (ultimo->proximo == NULL) {
         lista->ultimo = penultimo;
     }
-    
+
     penultimo->proximo = ultimo->proximo;
     free(ultimo);
     lista->numeroPalavras--;
@@ -68,13 +68,13 @@ void removePalavra(ListaDePalavras * lista, Palavra * palavra) {
 int verificaPalavra(ListaDePalavras * lista, Palavra * palavra) {
     CelulaPalavra * i = lista->primeiro->proximo;
     int encontrado = 0;
-    
+
     while (i != NULL && encontrado == 0) {
         encontrado = (strcmp(i->info.texto, palavra->texto) == 0);
         //encontrado = (i->info.texto == palavra->texto);
         i = i->proximo;
     }
-    
+
     return encontrado;
 }
 
@@ -84,7 +84,7 @@ int numeroPalavras(ListaDePalavras * lista) {
 }
 
 // Imprime os dados de uma lista linear de palavras.
-void imprime(ListaDePalavras * lista) {
+void imprimeListaPalavras(ListaDePalavras * lista) {
     CelulaPalavra * i = lista->primeiro->proximo;
     printf("***** Imprimindo Lista de Palavras *****\n");
     while (i != NULL) {

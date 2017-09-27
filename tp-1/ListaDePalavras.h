@@ -57,7 +57,7 @@ int verificaPalavra(ListaDePalavras * lista, Palavra * palavra);
 int numeroPalavras(ListaDePalavras * lista);
 
 // Imprime os dados de uma lista linear de palavras.
-void imprime(ListaDePalavras * lista);
+void imprimeListaPalavras(ListaDePalavras * lista);
 
 
 #endif /* ListaDePalavras_h */
