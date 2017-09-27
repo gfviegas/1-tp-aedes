@@ -1,0 +1,60 @@
+[33mcommit cfc50e67f851cf39779606bd3bcd48c7f7796306[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Merge: 9f9e579 9110b49
+Author: Heitor <heitorpsoa@gmail.com>
+Date:   Thu Sep 21 11:39:36 2017 -0300
+
+    Merge branch 'master' of https://github.com/gfviegas/1-tp-aedes
+
+[33mcommit 9f9e579b02ab770ae54b7ae9519a4a0651df7e6d[m
+Author: Heitor <heitorpsoa@gmail.com>
+Date:   Thu Sep 21 11:38:46 2017 -0300
+
+    ponto aga do tipo palavra, e ponto ce do tad palavra; Falta funcoes no ponto c
+
+[33mcommit 9110b4919e768e7e681ed43f629bdec2536d7c62[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Arthur Marciano <arthur.martep@gmail.com>
+Date:   Thu Sep 21 11:35:44 2017 -0300
+
+    Arquivo.c
+
+[33mcommit 70c381fe9d7b9bde9d6cbee01bd8335c6169755b[m
+Author: Arthur Marciano <arthur.martep@gmail.com>
+Date:   Thu Sep 21 11:35:02 2017 -0300
+
+    Adicionando arquivo.h
+
+[33mcommit e0eb1385166a05e1e1ee276d1e716a21018e2c0b[m
+Author: Arthur Marciano <arthur.martep@gmail.com>
+Date:   Thu Sep 21 11:19:10 2017 -0300
+
+    Config codeblocks lixo
+
+[33mcommit 0af0d6bcd0e0263cc09e9d9644237409d7557372[m
+Author: Heitor <heitorpsoa@gmail.com>
+Date:   Tue Sep 19 20:54:08 2017 -0300
+
+    vai dar a bunda
+
+[33mcommit 77b82c88e402b5577a9f0fd6eb6b40b3ba115da0[m
+Author: ArthurMarte <arthur.martep@gmail.com>
+Date:   Tue Sep 19 20:46:07 2017 -0300
+
+    HEITOR DIGA OI
+
+[33mcommit 176c5f854b56dd1f872c44d35ada1dbc68ee2407[m
+Author: Gustavo Viegas <webviegas@gmail.com>
+Date:   Tue Sep 19 10:16:15 2017 -0300
+
+    Alterado o texto imprimido para uma mensagem bem neutra.
+
+[33mcommit 5bf0ccc83f5072c91605c6358d678723bf437b9b[m
+Author: Heitor <heitorpsoa@gmail.com>
+Date:   Tue Sep 19 10:11:20 2017 -0300
+
+    outra coisa
+
+[33mcommit b70d41f109c0a1d2af9ee2758c41455b9f5d783d[m
+Author: Gustavo Viegas <webviegas@gmail.com>
+Date:   Tue Sep 19 09:21:13 2017 -0300
+
+    Initial Commit

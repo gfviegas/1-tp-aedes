@@ -7,6 +7,8 @@ void CriaListaNLinhas(Tlista *lista){
     lista->pUltimo = lista->pPrimeiro;
     lista->pPrimeiro->pProx = NULL;
     lista->QntdItens = 0;
+
+printf("Criou a lista de numeros linha\n");
 };
 
 void InsereNovoNumeroLinha(Tlista *lista, int numero){
@@ -58,7 +60,7 @@ int RetornaQntdLinhas(Tlista *lista){
 };
 
 void ImprimeLinhas(Tlista *lista){
-   Tcelula *ultimo = lista->pPrimeiro->pProx;
+   Apontador ultimo = lista->pPrimeiro->pProx;
    while(ultimo != NULL){
         printf("%d\n", ultimo->Nlinha);
         ultimo = ultimo->pProx;

@@ -1,0 +1,42 @@
+# depslib dependency file v1.0
+1506548201 source:c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"TadPalavra.h"
+	"NumeroLinha.h"
+
+1506547489 c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\tadpalavra.h
+	<string.h>
+	"NumeroLinha.h"
+
+1506548220 source:c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\tadpalavra.c
+	"TadPalavra.h"
+	<stdlib.h>
+	<string.h>
+	"NumeroLinha.h"
+
+1506517013 source:c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\listadepalavras.c
+	"Palavra.h"
+	"ListaDePalavras.h"
+	<string.h>
+
+1506357499 c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\palavra.h
+	<stdio.h>
+	<stdlib.h>
+
+1506517352 c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\listadepalavras.h
+	<stdio.h>
+	"Palavra.h"
+
+1506547605 source:c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\numerolinha.c
+	<stdio.h>
+	"NumeroLinha.h"
+	<stdlib.h>
+
+1506517316 c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\numerolinha.h
+
+1506357499 source:c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\palavra.c
+	<string.h>
+	"Palavra.h"
+

@@ -20,7 +20,7 @@ typedef struct{
     Tlista lista;
 }Tpalavra;
 
-void criaPalavraVazia(Tpalavra *palavra, Tlista *lista);
+void criaPalavraVazia(Tpalavra *palavra);
 
 void preencheCadeiaDeCaracteres(Tpalavra *palavra, char *Preenchimento);
 
