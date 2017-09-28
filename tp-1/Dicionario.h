@@ -2,10 +2,25 @@
 #define DICIONARIO_H_INCLUDED
 #include "Alfabeto.h"
 
+#define TAMLETRAS 26
+    
+typedef struct Dicionario {
+    LetraAlfabeto letras[TAMLETRAS];
+} Dicionario;
 
-typedef struct{
-    LetraAlfabeto letras[26];
-}TDicionario;
 
+// Insere uma nova palavra e sua linha no dicionario.
+// Caso seja uma palavra já existente, somente a linha será inserida na palavra já cadastrada.
+void inserePalavraDicionario(Dicionario* dicionario, char* palavra, int linha);
+
+// Remove uma palavra do dicionário.
+// Se a palavra não existir, uma mensagem será printada.
+void removePalavraDicionario(Dicionario* dicionario, char* palavra);
+
+// Imprime a lista de palavras de uma determinada letra do dicionario.
+void imprimeLetraDicionario(Dicionario* dicionario, char letra);
+
+// Imprime todas as palavras do dicionário em ordem alfabética das letras.
+void imprimeDicionario(Dicionario* dicionario);
 
 #endif // DICIONARIO_H_INCLUDED
