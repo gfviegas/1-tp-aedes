@@ -7,15 +7,15 @@
 typedef struct{
     char caracter;
     ListaDePalavras listaPalavra;
-}TLetraAlfabeto;
+}LetraAlfabeto;
 
-void criaLetraAlfabeto(TLetraAlfabeto *letra);
+void criaLetraAlfabeto(LetraAlfabeto *letra);
 
-void preencheCaracter(TLetraAlfabeto *letra,char caracter);
+void preencheCaracter(LetraAlfabeto *letra, char caracter);
 
-char retornaCaracter(TLetraAlfabeto *letra);
+char retornaCaracter(LetraAlfabeto *letra);
 
-void imprimeLetraAlfabeto(TLetraAlfabeto *letra);
+void imprimeLetraAlfabeto(LetraAlfabeto *letra);
 
 
 #endif // ALFABETO_H_INCLUDED

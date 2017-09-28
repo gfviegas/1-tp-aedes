@@ -11,7 +11,7 @@ int main(){
     Palavra palavra,palavra2,palavra3,palavra4;
     char *string, *string2, *string3, *string4, caracter;
     ListaDePalavras lista;
-    TLetraAlfabeto letra;
+    LetraAlfabeto letra;
     caracter = 'b';
 
     string = "biscoito";

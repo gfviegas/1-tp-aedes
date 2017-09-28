@@ -4,7 +4,7 @@
 
 
 typedef struct{
-    TLetraAlfabeto letras[26];
+    LetraAlfabeto letras[26];
 }TDicionario;
 
 

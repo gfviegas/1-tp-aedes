@@ -3,19 +3,19 @@
 #include <stdlib.h>
 #include <string.h>
 
-void criaLetraAlfabeto(TLetraAlfabeto *letra){
+void criaLetraAlfabeto(LetraAlfabeto *letra){
     letra->caracter = ' ';
     criaListaDePalavras(&letra->listaPalavra);
 }
-void preencheCaracter(TLetraAlfabeto *letra,char caracter){
+void preencheCaracter(LetraAlfabeto *letra, char caracter){
     letra->caracter = caracter;
 }
 
-char retornaCaracter(TLetraAlfabeto *letra){
+char retornaCaracter(LetraAlfabeto *letra){
     return letra->caracter;
 }
 
-void imprimeLetraAlfabeto(TLetraAlfabeto *letra){
+void imprimeLetraAlfabeto(LetraAlfabeto *letra){
     printf("%c\n", letra->caracter);
     imprimeListaPalavras(&letra->listaPalavra);
 
