@@ -7,8 +7,6 @@ void CriaListaNLinhas(Tlista *lista){
     lista->pUltimo = lista->pPrimeiro;
     lista->pPrimeiro->pProx = NULL;
     lista->QntdItens = 0;
-
-printf("Criou a lista de numeros linha\n");
 };
 
 void InsereNovoNumeroLinha(Tlista *lista, int numero){

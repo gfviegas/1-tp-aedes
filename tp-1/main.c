@@ -3,30 +3,32 @@
 #include <string.h>
 #include "TadPalavra.h"
 #include "NumeroLinha.h"
+#include "ListaDePalavras.h"
+#include "Alfabeto.h"
 
 int main(){
 
-    Tpalavra palavra;
-    char *string;
-
+    Tpalavra palavra,palavra2,palavra3,palavra4;
+    char *string, *string2, *string3, *string4, caracter;
+    ListaDePalavras lista;
+    TLetraAlfabeto letra;
+    caracter = 'b';
     string = "biscoito";
-
+    string2 = "cafe";
+    string3 = "trabson";
+    string4 = "Batata";
+    printf("\n\nLetraAlfabeto------------------------\n\n\n");
+    criaLetraAlfabeto(&letra);
+    preencheCaracter(&letra, caracter);
+    printf("%c\n", retornaCaracter(&letra));
     criaPalavraVazia(&palavra);
+    preencheCadeiaDeCaracteres(&palavra,string);
+    criaPalavraVazia(&palavra2);
+    preencheCadeiaDeCaracteres(&palavra2,string4);
+    insereNovaPalavraFinal(&letra.listaPalavra, &palavra);
+    insereNovaPalavraFinal(&letra.listaPalavra, &palavra2);
+    imprimeLetraAlfabeto(&letra);
 
-    preencheCadeiaDeCaracteres(&palavra, string);
-
-    imprimeCadeiaDeCaracteres(&palavra);
-    InsereNovoNumeroLinha(&palavra.lista, 2);
-    InsereNovoNumeroLinha(&palavra.lista, 4);
-    InsereNovoNumeroLinha(&palavra.lista, 5);
-    InsereNovoNumeroLinha(&palavra.lista, 12);
-    InsereNovoNumeroLinha(&palavra.lista, 15);
-    RetiraNumeroLinha(&palavra.lista);
-    ImprimeLinhas(&palavra.lista);
-
-    printf("-------------------------\n");
-
-    imprimePalavra(&palavra);
 
     return 0;
 }

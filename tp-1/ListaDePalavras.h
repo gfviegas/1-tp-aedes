@@ -23,11 +23,11 @@
 #define ListaDePalavras_h
 
 #include <stdio.h>
-#include "Palavra.h"
+#include "TadPalavra.h"
 
 typedef struct Celula* ApontadorPalavra;
 typedef struct Celula {
-    Palavra info;
+    Tpalavra info;
     ApontadorPalavra proximo;
 } CelulaPalavra;
 
@@ -37,21 +37,22 @@ typedef struct {
     int numeroPalavras;
 } ListaDePalavras;
 
+
 // Cria uma lista de palavras.
 void criaListaDePalavras(ListaDePalavras * lista);
 
 // Insere uma palavra no final da lista linear de palavras.
-void insereNovaPalavraFinal(ListaDePalavras * lista, Palavra * palavra);
+void insereNovaPalavraFinal(ListaDePalavras * lista, Tpalavra * palavra);
 
 // Remove uma palavra específica da lista linear de palavras.
-void removePalavra(ListaDePalavras * lista, Palavra * palavra);
+void removePalavra(ListaDePalavras * lista, Tpalavra * palavra);
 
 // Remove uma palavra no final da lista linear de palavras.
 void removePalavraFinal(ListaDePalavras * lista);
 
 // Verifica se uma palavra existe na lista linear de palavras.
 // 1 = Existe, 0 = Não Existe.
-int verificaPalavra(ListaDePalavras * lista, Palavra * palavra);
+int verificaPalavra(ListaDePalavras * lista, Tpalavra * palavra);
 
 // Retorna o número de palavras em uma lista linear de palavras.
 int numeroPalavras(ListaDePalavras * lista);

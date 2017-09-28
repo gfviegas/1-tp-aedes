@@ -39,9 +39,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../NumeroLinha.h" />
-		<Unit filename="../Palavra.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="../Palavra.h" />
 		<Unit filename="../TadPalavra.c">
 			<Option compilerVar="CC" />
