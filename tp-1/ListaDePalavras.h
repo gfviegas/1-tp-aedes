@@ -25,16 +25,16 @@
 #include <stdio.h>
 #include "TadPalavra.h"
 
-typedef struct Celula* ApontadorPalavra;
-typedef struct Celula {
-    Tpalavra info;
+typedef struct CelulaPalavra* ApontadorPalavra;
+typedef struct CelulaPalavra {
+    Palavra info;
     ApontadorPalavra proximo;
 } CelulaPalavra;
 
 typedef struct {
     ApontadorPalavra primeiro;
     ApontadorPalavra ultimo;
-    int numeroPalavras;
+    int quantidadePalavras;
 } ListaDePalavras;
 
 
@@ -55,7 +55,7 @@ void removePalavraFinal(ListaDePalavras * lista);
 int verificaPalavra(ListaDePalavras * lista, Tpalavra * palavra);
 
 // Retorna o número de palavras em uma lista linear de palavras.
-int numeroPalavras(ListaDePalavras * lista);
+int quantidadePalavras(ListaDePalavras * lista);
 
 // Imprime os dados de uma lista linear de palavras.
 void imprimeListaPalavras(ListaDePalavras * lista);

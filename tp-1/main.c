@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "TadPalavra.h"
+#include "Palavra.h"
 #include "NumeroLinha.h"
 #include "ListaDePalavras.h"
 #include "Alfabeto.h"
@@ -13,6 +13,7 @@ int main(){
     ListaDePalavras lista;
     TLetraAlfabeto letra;
     caracter = 'b';
+
     string = "biscoito";
     string2 = "cafe";
     string3 = "trabson";

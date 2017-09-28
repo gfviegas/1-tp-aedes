@@ -8,13 +8,14 @@
 #include "TadPalavra.h"
 #include "ListaDePalavras.h"
 #include <string.h>
+#include <stdlib.h>
 
 // Cria uma lista de palavras.
 void criaListaDePalavras(ListaDePalavras * lista) {
     lista->primeiro = (ApontadorPalavra) malloc(sizeof(CelulaPalavra));
     lista->ultimo = lista->primeiro;
     lista->primeiro->proximo = NULL;
-    lista->numeroPalavras = 0;
+    lista->quantidadePalavras = 0;
 }
 
 
@@ -25,13 +26,13 @@ void insereNovaPalavraFinal(ListaDePalavras * lista, Tpalavra * palavra) {
 
     lista->ultimo->info = *palavra;
     lista->ultimo->proximo = NULL;
-    lista->numeroPalavras++;
+    lista->quantidadePalavras++;
 }
 
 // Remove uma palavra no final da lista linear de palavras.
 void removePalavraFinal(ListaDePalavras * lista) {
-    CelulaPalavra *ultimo = lista->primeiro->proximo;
-    CelulaPalavra *penultimo = NULL;
+    ApontadorPalavra ultimo = lista->primeiro->proximo;
+    ApontadorPalavra penultimo = NULL;
 
     while (ultimo->proximo != NULL) {
         penultimo = ultimo;
@@ -40,15 +41,15 @@ void removePalavraFinal(ListaDePalavras * lista) {
     free(ultimo);
     penultimo->proximo = NULL;
     lista->ultimo = penultimo;
-    lista->numeroPalavras--;
+    lista->quantidadePalavras--;
 }
 
 // Remove uma palavra específica da lista linear de palavras.
-void removePalavra(ListaDePalavras * lista, Tpalavra * palavra) {
-    CelulaPalavra *ultimo = lista->primeiro->proximo;
-    CelulaPalavra *penultimo = NULL;
+void removePalavra(ListaDePalavras * lista, Palavra * palavra) {
+    ApontadorPalavra ultimo = lista->primeiro->proximo;
+    ApontadorPalavra penultimo = NULL;
 
-    while (ultimo->proximo != NULL && strcmp(ultimo->info.cadeiaDeCaracteres, palavra->cadeiaDeCaracteres) != 0) {
+    while (ultimo->proximo != NULL && strcmp(ultimo->info.valor, palavra->valor) != 0) {
         penultimo = ultimo;
         ultimo = ultimo->proximo;
     }
@@ -59,19 +60,19 @@ void removePalavra(ListaDePalavras * lista, Tpalavra * palavra) {
 
     penultimo->proximo = ultimo->proximo;
     free(ultimo);
-    lista->numeroPalavras--;
+    lista->quantidadePalavras--;
 }
 
 
 // Verifica se uma palavra existe na lista linear de palavras.
 // 1 = Existe, 0 = Não Existe.
-int verificaPalavra(ListaDePalavras * lista, Tpalavra * palavra) {
-    CelulaPalavra * i = lista->primeiro->proximo;
+int verificaPalavra(ListaDePalavras * lista, Palavra * palavra) {
+    ApontadorPalavra  i = lista->primeiro->proximo;
     int encontrado = 0;
 
     while (i != NULL && encontrado == 0) {
-        encontrado = (strcmp(i->info.cadeiaDeCaracteres, palavra->cadeiaDeCaracteres) == 0);
-        //encontrado = (i->info.texto == palavra->texto);
+        encontrado = (strcmp(i->info.valor, palavra->valor) == 0);
+        //encontrado = (i->info.valor == palavra->valor);
         i = i->proximo;
     }
 
@@ -79,13 +80,13 @@ int verificaPalavra(ListaDePalavras * lista, Tpalavra * palavra) {
 }
 
 // Retorna o número de palavras em uma lista linear de palavras.
-int numeroPalavras(ListaDePalavras * lista) {
-    return lista->numeroPalavras;
+int quantidadePalavras(ListaDePalavras * lista) {
+    return lista->quantidadePalavras;
 }
 
 // Imprime os dados de uma lista linear de palavras.
 void imprimeListaPalavras(ListaDePalavras * lista) {
-    CelulaPalavra * i = lista->primeiro->proximo;
+    ApontadorPalavra  i = lista->primeiro->proximo;
     printf("***** Imprimindo Lista de Palavras *****\n");
     while (i != NULL) {
         printf("Dados da palavra: %... \n");

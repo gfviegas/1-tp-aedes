@@ -1,15 +1,34 @@
-//
-//  Palavra.c
-//  tp-1
-//
-//  Created by Viegas on 21/09/17.
-//  Copyright © 2017 Ciencia da Computacao - UFV. All rights reserved.
-//
-
-#include <string.h>
 #include "Palavra.h"
+#include <stdlib.h>
+#include <string.h>
+#include "NumeroLinha.h"
 
+void criaPalavraVazia(Palavra *palavra) {
 
-void criaPalavra(Palavra* novaPalavra, char *texto) {
-    strcpy(novaPalavra->texto, texto);
+    strcpy(palavra->valor, " ");
+    CriaListaNLinhas(&palavra->lista);
+}
+
+void preencheCadeiaDeCaracteres(Palavra *palavra, char *Preenchimento){
+    strcpy(palavra->valor,Preenchimento);
+};
+
+void imprimeCadeiaDeCaracteres(Palavra *palavra){
+    printf("%s\n", palavra->valor);
+};
+
+void printPrimeiro(ListaLinhas *lista) {
+    ApontadorCelulaLinhas teste = lista->primeiro->proximo;
+
+    printf("%d", teste->numeroLinha);
+}
+
+void imprimePalavra(Palavra *palavra) {
+
+    imprimeCadeiaDeCaracteres(palavra);
+    ImprimeLinhas(&palavra->lista);
+}
+
+char *retornaCadeiaDeCaracteres(Palavra *palavra){
+    return palavra->valor;
 };
