@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+#include "Dicionario.h"
+
+// Nenhum desses includes devem estar no oficial!!
 #include "Palavra.h"
 #include "NumeroLinha.h"
 #include "ListaDePalavras.h"
@@ -28,6 +32,12 @@ int main(){
     insereNovaPalavraFinal(&letra.listaPalavra, &palavra);
     insereNovaPalavraFinal(&letra.listaPalavra, &palavra2);
     imprimeLetraAlfabeto(&letra);
+    
+    
+    /**
+     * Daqui pra frente é o código oficial!
+     **/
+    // Dicionario dicionario;
 
 
     return 0;
