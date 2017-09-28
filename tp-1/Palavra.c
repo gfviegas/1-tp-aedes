@@ -1,7 +1,9 @@
-#include "Palavra.h"
+
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 #include "NumeroLinha.h"
+#include "Palavra.h"
 
 void criaPalavraVazia(Palavra *palavra) {
 

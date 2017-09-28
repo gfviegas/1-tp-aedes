@@ -2,7 +2,7 @@
 #define ALFABETO_H_INCLUDED
 #include "ListaDePalavras.h"
 #include "NumeroLinha.h"
-#include "TadPalavra.h"
+#include "Palavra.h"
 
 typedef struct{
     char caracter;

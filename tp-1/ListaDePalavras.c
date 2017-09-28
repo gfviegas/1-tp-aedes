@@ -5,10 +5,11 @@
 //  Created by Viegas on 21/09/17.
 //  Copyright © 2017 Ciencia da Computacao - UFV. All rights reserved.
 
-#include "TadPalavra.h"
+#include "Palavra.h"
 #include "ListaDePalavras.h"
 #include <string.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 // Cria uma lista de palavras.
 void criaListaDePalavras(ListaDePalavras * lista) {
@@ -20,7 +21,7 @@ void criaListaDePalavras(ListaDePalavras * lista) {
 
 
 // Insere uma palavra no final da lista linear de palavras.
-void insereNovaPalavraFinal(ListaDePalavras * lista, Tpalavra * palavra) {
+void insereNovaPalavraFinal(ListaDePalavras * lista, Palavra * palavra) {
     lista->ultimo->proximo = (ApontadorPalavra) malloc(sizeof(CelulaPalavra));
     lista->ultimo = lista->ultimo->proximo;
 
@@ -89,7 +90,7 @@ void imprimeListaPalavras(ListaDePalavras * lista) {
     ApontadorPalavra  i = lista->primeiro->proximo;
     printf("***** Imprimindo Lista de Palavras *****\n");
     while (i != NULL) {
-        printf("Dados da palavra: %... \n");
+        printf("Dados da palavra: ... \n");
         imprimePalavra(&i->info);
         i = i->proximo;
     }
