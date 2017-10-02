@@ -23,4 +23,7 @@ void imprimeLetraDicionario(Dicionario* dicionario, char letra);
 // Imprime todas as palavras do dicionário em ordem alfabética das letras.
 void imprimeDicionario(Dicionario* dicionario);
 
+// Retorna a posição do indice de uma letra, ex: a == 0, b == 1, c == 2, etc.
+int retornaIndiceLetra(char letra);
+
 #endif // DICIONARIO_H_INCLUDED
