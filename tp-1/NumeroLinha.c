@@ -7,8 +7,6 @@ void CriaListaNLinhas(ListaLinhas *lista){
     lista->ultimo = lista->primeiro;
     lista->primeiro->proximo = NULL;
     lista->quantidadeItens = 0;
-
-printf("Criou a lista de numeros linha\n");
 };
 
 void InsereNovoNumeroLinha(ListaLinhas *lista, int numero){
@@ -60,9 +58,11 @@ int RetornaQntdLinhas(ListaLinhas *lista){
 };
 
 void ImprimeLinhas(ListaLinhas *lista){
-   ApontadorCelulaLinhas ultimo = lista->primeiro->proximo;
-   while(ultimo != NULL){
-        printf("%d\n", ultimo->numeroLinha);
+    ApontadorCelulaLinhas ultimo = lista->primeiro->proximo;
+    printf("Linhas: \n");
+    while(ultimo != NULL){
+        printf("\t -> %d\n", ultimo->numeroLinha);
         ultimo = ultimo->proximo;
-   }
+    }
+    printf("\n");
 };

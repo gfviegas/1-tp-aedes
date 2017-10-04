@@ -1,4 +1,4 @@
-#include "alfabeto.h"
+#include "LetraAlfabeto.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -15,8 +15,9 @@ char retornaCaracter(LetraAlfabeto *letra){
     return letra->caracter;
 }
 
-void imprimeLetraAlfabeto(LetraAlfabeto *letra){
-    printf("%c\n", letra->caracter);
+void imprimeLetraAlfabeto(LetraAlfabeto *letra) {
+    int quantidadePalavrasLetra = quantidadePalavras(&letra->listaPalavra);
+    printf("=== LETRA: %c     ||     Total de %d palavras. ===\n", letra->caracter, quantidadePalavrasLetra);
     imprimeListaPalavras(&letra->listaPalavra);
 
 }

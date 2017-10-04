@@ -51,8 +51,9 @@ void removePalavra(ListaDePalavras * lista, Palavra * palavra);
 void removePalavraFinal(ListaDePalavras * lista);
 
 // Verifica se uma palavra existe na lista linear de palavras.
+// Se existe, atribui o argumento Palavra como o ponteiro pra palavra encontrada.
 // 1 = Existe, 0 = Não Existe.
-int verificaPalavra(ListaDePalavras * lista, Palavra * palavra);
+int verificaPalavra(ListaDePalavras * lista, char * valorPalavra, Palavra * palavra);
 
 // Retorna o número de palavras em uma lista linear de palavras.
 int quantidadePalavras(ListaDePalavras * lista);

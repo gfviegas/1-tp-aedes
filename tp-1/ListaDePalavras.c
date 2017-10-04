@@ -67,13 +67,18 @@ void removePalavra(ListaDePalavras * lista, Palavra * palavra) {
 
 // Verifica se uma palavra existe na lista linear de palavras.
 // 1 = Existe, 0 = Não Existe.
-int verificaPalavra(ListaDePalavras * lista, Palavra * palavra) {
+int verificaPalavra(ListaDePalavras * lista, char * valorPalavra, Palavra * palavra) {
+    //strtok(valorPalavra, "\n"); // Remove possiveis quebras de linha da palavra
     ApontadorPalavra  i = lista->primeiro->proximo;
     int encontrado = 0;
 
-    while (i != NULL && encontrado == 0) {
-        encontrado = (strcmp(i->info.valor, palavra->valor) == 0);
-        //encontrado = (i->info.valor == palavra->valor);
+    while (i != NULL) {
+        encontrado = (strcmp(i->info.valor, valorPalavra) == 0);
+        if (encontrado == 1) {
+            *palavra = i->info;
+            break;
+        }
+        
         i = i->proximo;
     }
 
@@ -88,11 +93,8 @@ int quantidadePalavras(ListaDePalavras * lista) {
 // Imprime os dados de uma lista linear de palavras.
 void imprimeListaPalavras(ListaDePalavras * lista) {
     ApontadorPalavra  i = lista->primeiro->proximo;
-    printf("***** Imprimindo Lista de Palavras *****\n");
     while (i != NULL) {
-        printf("Dados da palavra: ... \n");
         imprimePalavra(&i->info);
         i = i->proximo;
     }
-    printf("***___***\n");
 }

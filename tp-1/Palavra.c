@@ -6,17 +6,16 @@
 #include "Palavra.h"
 
 void criaPalavraVazia(Palavra *palavra) {
-
     strcpy(palavra->valor, " ");
     CriaListaNLinhas(&palavra->lista);
 }
 
 void preencheCadeiaDeCaracteres(Palavra *palavra, char *Preenchimento){
-    strcpy(palavra->valor,Preenchimento);
+    strcpy(palavra->valor, Preenchimento);
 };
 
 void imprimeCadeiaDeCaracteres(Palavra *palavra){
-    printf("%s\n", palavra->valor);
+    printf("PALAVRA: %s\n", palavra->valor);
 };
 
 void printPrimeiro(ListaLinhas *lista) {
@@ -26,7 +25,6 @@ void printPrimeiro(ListaLinhas *lista) {
 }
 
 void imprimePalavra(Palavra *palavra) {
-
     imprimeCadeiaDeCaracteres(palavra);
     ImprimeLinhas(&palavra->lista);
 }
