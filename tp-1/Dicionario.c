@@ -12,7 +12,7 @@
 
 void criaDicionario (Dicionario* dicionario) {
     int i;
-    
+
     for (i = 0; i < TAMLETRAS; i++) {
         criaLetraAlfabeto(&dicionario->letras[i]);
         preencheCaracter(&dicionario->letras[i], (char) i + 97);
@@ -25,8 +25,8 @@ void inserePalavraDicionario(Dicionario* dicionario, char* palavra, int linha) {
     int indicePalavra = retornaIndiceLetra(palavra[0]);
     Palavra palavraAInserir;
     int palavraExisteLista = verificaPalavra(&dicionario->letras[indicePalavra].listaPalavra, palavra, &palavraAInserir);
-    
-    
+
+
     if (palavraExisteLista == 0) {
         criaPalavraVazia(&palavraAInserir);
         preencheCadeiaDeCaracteres(&palavraAInserir, palavra);
@@ -35,12 +35,24 @@ void inserePalavraDicionario(Dicionario* dicionario, char* palavra, int linha) {
     } else {
         InsereNovoNumeroLinha(&palavraAInserir.lista, linha);
     }
+
 }
 
 // Remove uma palavra do dicionário.
 // Se a palavra não existir, uma mensagem será printada.
-void removePalavraDicionario(Dicionario* dicionario, char* palavra) {
+int removePalavraDicionario(Dicionario* dicionario, char* palavra) {
+    int indicePalavra = retornaIndiceLetra(palavra[0]);
+    Palavra Aux;
+    int palavraExisteLista = verificaPalavra(&dicionario->letras[indicePalavra].listaPalavra, palavra, &Aux);
+    if (palavraExisteLista == 0){
+        printf("Palavra nao existe.\n");
+        return 0;
+    } else {
+        removePalavra(&dicionario->letras[indicePalavra].listaPalavra, &Aux);
+        return 1;
+    }
 }
+
 
 // Imprime a lista de palavras de uma determinada letra do dicionario.
 void imprimeLetraDicionario(Dicionario* dicionario, char letra) {
@@ -69,12 +81,12 @@ int verificaPalavraExisteDicionario(Dicionario* dicionario, char* palavra) {
     int indicePalavra = retornaIndiceLetra(palavra[0]);
     Palavra palavraDesejada;
     int palavraExiste = verificaPalavra(&dicionario->letras[indicePalavra].listaPalavra, palavra, &palavraDesejada);
-    
+
     if (palavraExiste) {
         printf("*** Palavra encontrada!! *** \n");
         printf("Dados => ");
         imprimePalavra(&palavraDesejada);
     }
-    
+
     return palavraExiste;
 }

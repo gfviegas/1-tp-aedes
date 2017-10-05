@@ -31,6 +31,11 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="../Alfabeto.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../Alfabeto.h" />
+		<Unit filename="../Dicionario.h" />
 		<Unit filename="../ListaDePalavras.c">
 			<Option compilerVar="CC" />
 		</Unit>

@@ -32,6 +32,8 @@ void imprimeInstrucoes () {
     printf("Insira 2 \t->\t Imprimir todos os dados do Dicionário\n");
     printf("Insira 3 \t->\t Imprimir Dados de uma letra do Dicionário\n");
     printf("Insira 4 \t->\t Verificar se uma palavra existe no Dicionário\n");
+    printf("Insira 5 \t->\t Remove palavra do dicionario\n");
+    printf("Insira 6 \t->\t Insere palavra no dicionario");
 }
 
 void configuraDicionario (Dicionario * dicionario) {
@@ -40,7 +42,7 @@ void configuraDicionario (Dicionario * dicionario) {
     char buffer[BUFFERSIZE]; // Buffer de uma linha (255 caracteres)
     char * palavraAtual; // Armazenará a palavra atual em cada iteração
     FILE *arquivo = NULL; // Arquivo TXT lido
-    
+
     printf("Entre o caminho do arquivo, com extensão: ");
     scanf(" %[^\n]s", nomeArquivo);
     arquivo = fopen(nomeArquivo, "r");
@@ -48,19 +50,19 @@ void configuraDicionario (Dicionario * dicionario) {
         printf("O arquivo %s não existe. Encerrando a execução. \n", nomeArquivo);
         exit(-1);
     }
-    
+
     criaDicionario(dicionario);
-    
-    while (fgets(buffer, 255, (FILE*) arquivo)) {
+
+    while (fgets(buffer, BUFFERSIZE, (FILE*) arquivo)) {
         palavraAtual = strtok (buffer, " \n\r\t");
         while (palavraAtual != NULL) {
             inserePalavraDicionario(dicionario, palavraAtual, linhaAtual);
             palavraAtual = strtok (NULL, " \n\r\t");
         }
-        
+
         linhaAtual++;
     }
-    
+
     fclose(arquivo);
 }
 
@@ -75,21 +77,39 @@ void promptPalavraDicionario (Dicionario * dicionario) {
     char palavraDesejada[50];
     printf("Entre a palavra que deseja verificar (max 50 caracteres): ");
     scanf(" %[^\n]s", palavraDesejada);
-    
+
     if (verificaPalavraExisteDicionario(dicionario, palavraDesejada) == 0) {
         printf("A palavra %s não existe no dicionário. \n", palavraDesejada);
     }
 }
+void promptInserePalavra(Dicionario * dicionario) {
+    char palavraDesejada[50];
+    int linha;
+    printf("Entre a palavra a ser inserida: \n");
+    scanf(" %[^\n]s", palavraDesejada);
+    printf("Entre com a linha a ser inserida: \n");
+    scanf(" %d", &linha);
+    inserePalavraDicionario(dicionario, palavraDesejada, linha);
+
+}
+
+void promptRemovePalavra(Dicionario *dicionario){
+    char palavraDesejada[50];
+    printf("Entre a palavra que deseja remover (max 50 caracteres): ");
+    scanf(" %[^\n]s", palavraDesejada);
+    removePalavraDicionario(dicionario, palavraDesejada);
+
+}
 
 int lerOperacao (Dicionario * dicionario) {
     int codigo, retorno = 1;
-    
+
     imprimeLinha();
     imprimeInstrucoes();
 
     printf("\nInsira o código da operação que deseja executar: ");
     scanf("%d", &codigo);
-    
+
     switch (codigo) {
         case 0:
             retorno = 0;
@@ -106,24 +126,30 @@ int lerOperacao (Dicionario * dicionario) {
         case 4:
             promptPalavraDicionario(dicionario);
             break;
+        case 5:
+            promptRemovePalavra(dicionario);
+            break;
+        case 6:
+            promptInserePalavra(dicionario);
+            break;
         default:
             printf("Código inválido!! \n");
             lerOperacao(dicionario);
             break;
     }
-    
+
     return retorno;
 }
 
 int main(){
     Dicionario dicionario;
-    
+
     imprimeCabecalho();
-    
+
     while (lerOperacao(&dicionario) == 1) {
         printf("\n Operação executada... \n");
     }
-    
+
     printf("\n\n Execução Interrompida! (usuário inseriu o código 0).\n");
 
     return 0;

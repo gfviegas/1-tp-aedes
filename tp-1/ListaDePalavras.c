@@ -78,7 +78,7 @@ int verificaPalavra(ListaDePalavras * lista, char * valorPalavra, Palavra * pala
             *palavra = i->info;
             break;
         }
-        
+
         i = i->proximo;
     }
 

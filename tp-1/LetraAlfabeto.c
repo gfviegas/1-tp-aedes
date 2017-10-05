@@ -17,7 +17,10 @@ char retornaCaracter(LetraAlfabeto *letra){
 
 void imprimeLetraAlfabeto(LetraAlfabeto *letra) {
     int quantidadePalavrasLetra = quantidadePalavras(&letra->listaPalavra);
-    printf("=== LETRA: %c     ||     Total de %d palavras. ===\n", letra->caracter, quantidadePalavrasLetra);
+    if(quantidadePalavrasLetra == 1)
+        printf("=== LETRA: %c     ||     Total de %d palavra. ===\n", letra->caracter, quantidadePalavrasLetra);
+    else
+        printf("=== LETRA: %c     ||     Total de %d palavras. ===\n", letra->caracter, quantidadePalavrasLetra);
     imprimeListaPalavras(&letra->listaPalavra);
 
 }
