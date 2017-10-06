@@ -1,3 +1,7 @@
+/**
+ * Métodos do TAD Palavra
+ * @author Heitor Passeado
+ */
 
 #include <stdlib.h>
 #include <string.h>
@@ -5,30 +9,29 @@
 #include "NumeroLinha.h"
 #include "Palavra.h"
 
+// Configura uma nova instância de uma variável do tipo Palavra e inicializa a lista de linhas
 void criaPalavraVazia(Palavra *palavra) {
     strcpy(palavra->valor, " ");
-    CriaListaNLinhas(&palavra->lista);
+    criaListaNumeroLinhas(&palavra->lista);
 }
 
-void preencheCadeiaDeCaracteres(Palavra *palavra, char *Preenchimento){
-    strcpy(palavra->valor, Preenchimento);
-};
+// Preenche o struct Palavra com a string desejada
+void preencheCadeiaDeCaracteres(Palavra *palavra, char *preenchimento) {
+    strcpy(palavra->valor, preenchimento);
+}
 
-void imprimeCadeiaDeCaracteres(Palavra *palavra){
+// Imprime a string vinculada ao TAD
+void imprimeCadeiaDeCaracteres(Palavra *palavra) {
     printf("PALAVRA: %s\n", palavra->valor);
-};
-
-void printPrimeiro(ListaLinhas *lista) {
-    ApontadorCelulaLinhas teste = lista->primeiro->proximo;
-
-    printf("%d", teste->numeroLinha);
 }
 
+// Imprime os dados de uma palavra
 void imprimePalavra(Palavra *palavra) {
     imprimeCadeiaDeCaracteres(palavra);
-    ImprimeLinhas(&palavra->lista);
+    imprimeLinhas(&palavra->lista);
 }
 
-char *retornaCadeiaDeCaracteres(Palavra *palavra){
+// Retorna a string vinculada a uma palavra
+char *retornaCadeiaDeCaracteres(Palavra *palavra) {
     return palavra->valor;
-};
+}

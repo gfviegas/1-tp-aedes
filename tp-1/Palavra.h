@@ -1,35 +1,54 @@
+/**
+ * Defini√ß√µes e Cabe√ßalhos do TAD Palavra
+ * @author Heitor Passeado
+ */
+
 #ifndef PALAVRA_H_INCLUDED
 #define PALAVRA_H_INCLUDED
 #include <string.h>
 #include "NumeroLinha.h"
-/*Em seguida, ser· necess·rio que vocÍ implemente o TAD Palavra. Cada elemento do tipo
-Palavra dever· ser representado por uma cadeia de caracteres (a palavra efetivamente) e uma
-lista linear que informa as linhas em que a palavra apareceu (TAD Lista de N˙meros de Linha).
-As operaÁıes deste TAD devem ser, pelo menos:
-- Cria Palavra vazia
-- Preenche cadeia de caracteres
-- Retorna cadeia de caracteres
-- Imprime cadeia de caracteres
-- Imprime Palavra (cadeia de caracteres + TAD Lista de N˙meros de linha)
-*/
 
-//TAD do tipo palavra(falta lista de numero de linhas)
-#define MAXTAMPALAVRA 32
-typedef struct{
+#define MAXTAMPALAVRA 50 // Tamanho m√°ximo da palavra
+typedef struct {
     char valor[MAXTAMPALAVRA];
     ListaLinhas lista;
-}Palavra;
+} Palavra;
 
+/**
+ * Configura uma nova inst√¢ncia de uma vari√°vel do tipo Palavra e inicializa a lista de linhas
+ * @method criaPalavraVazia
+ * @param  palavra          Ponteiro do tipo Palavra que ser√° manipulado
+ */
 void criaPalavraVazia(Palavra *palavra);
 
-void preencheCadeiaDeCaracteres(Palavra *palavra, char *Preenchimento);
+/**
+ * Preenche o struct Palavra com a string desejada
+ * @method preencheCadeiaDeCaracteres
+ * @param  palavra                    Ponteiro do tipo Palavra que ser√° manipulado
+ * @param  preenchimento              String que se deseja preencher no struct
+ */
+void preencheCadeiaDeCaracteres(Palavra *palavra, char *preenchimento);
 
+/**
+ * Imprime a string vinculada ao TAD
+ * @method imprimeCadeiaDeCaracteres
+ * @param  palavra                   Ponteiro do tipo Palavra que ser√° manipulado
+ */
 void imprimeCadeiaDeCaracteres(Palavra *palavra);
 
+/**
+ * Imprime os dados de uma palavra
+ * @method imprimePalavra
+ * @param  palavra        Ponteiro do tipo Palavra que ser√° manipulado
+ */
 void imprimePalavra(Palavra *palavra);
 
+/**
+ * Retorna a string vinculada a uma palavra
+ * @method retornaCadeiaDeCaracteres
+ * @param  palavra                   Ponteiro do tipo Palavra que ser√° manipulado
+ * @return                           String vinculada a uma palavra
+ */
 char *retornaCadeiaDeCaracteres(Palavra *palavra);
-
-
 
 #endif // PALAVRA_H_INCLUDED

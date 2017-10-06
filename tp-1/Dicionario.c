@@ -1,15 +1,13 @@
-//
-//  Dicionario.c
-//  tp-1
-//
-//  Created by Viegas on 28/09/17.
-//  Copyright © 2017 Ciencia da Computacao - UFV. All rights reserved.
-//
+/**
+ * Métodos do TAD Dicionário
+ * @author Gustavo Viegas
+ */
 
 #include <stdio.h>
 #include "Dicionario.h"
 #include "LetraAlfabeto.h"
 
+// Configura uma nova instância de uma variável do tipo Dicionário.
 void criaDicionario (Dicionario* dicionario) {
     int i;
 
@@ -19,33 +17,29 @@ void criaDicionario (Dicionario* dicionario) {
     }
 }
 
-// Insere uma nova palavra e sua linha no dicionario.
-// Caso seja uma palavra já existente, somente a linha será inserida na palavra já cadastrada.
+// Insere uma nova palavra e a linha do arquivo onde foi encontrado.
 void inserePalavraDicionario(Dicionario* dicionario, char* palavra, int linha) {
     int indicePalavra = retornaIndiceLetra(palavra[0]);
     Palavra palavraAInserir;
     int palavraExisteLista = verificaPalavra(&dicionario->letras[indicePalavra].listaPalavra, palavra, &palavraAInserir);
 
-
     if (palavraExisteLista == 0) {
         criaPalavraVazia(&palavraAInserir);
         preencheCadeiaDeCaracteres(&palavraAInserir, palavra);
-        InsereNovoNumeroLinha(&palavraAInserir.lista, linha);
+        insereNovoNumeroLinha(&palavraAInserir.lista, linha);
         insereNovaPalavraFinal(&dicionario->letras[indicePalavra].listaPalavra, &palavraAInserir);
     } else {
-        InsereNovoNumeroLinha(&palavraAInserir.lista, linha);
+        insereNovoNumeroLinha(&palavraAInserir.lista, linha);
     }
-
 }
 
-// Remove uma palavra do dicionário.
-// Se a palavra não existir, uma mensagem será printada.
+// Remove uma palavra do dicionário. Se a palavra não existir, uma mensagem de aviso será printada.
 int removePalavraDicionario(Dicionario* dicionario, char* palavra) {
     int indicePalavra = retornaIndiceLetra(palavra[0]);
     Palavra Aux;
     int palavraExisteLista = verificaPalavra(&dicionario->letras[indicePalavra].listaPalavra, palavra, &Aux);
-    if (palavraExisteLista == 0){
-        printf("Palavra nao existe.\n");
+    if (palavraExisteLista == 0) {
+        printf("A palavra %s nao existe no dicionario e portanto nao tem como ser removido.\n", palavra);
         return 0;
     } else {
         removePalavra(&dicionario->letras[indicePalavra].listaPalavra, &Aux);
@@ -53,14 +47,13 @@ int removePalavraDicionario(Dicionario* dicionario, char* palavra) {
     }
 }
 
-
 // Imprime a lista de palavras de uma determinada letra do dicionario.
 void imprimeLetraDicionario(Dicionario* dicionario, char letra) {
     int indicePalavra = retornaIndiceLetra(letra);
     imprimeLetraAlfabeto(&dicionario->letras[indicePalavra]);
 }
 
-// Imprime todas as palavras do dicionário em ordem alfabética das letras.
+// Imprime todas as palavras do dicionário em ordem alfabética, crescente, das letras iniciais das palavras.
 void imprimeDicionario(Dicionario* dicionario) {
     printf("********    IMPRIMINDO TODO O DICIONÁRIO    ********\n");
     int i;
@@ -70,13 +63,12 @@ void imprimeDicionario(Dicionario* dicionario) {
     }
 }
 
-// Retorna a posição do indice de uma letra, ex: a == 0, b == 1, c == 2, etc.
+// Retorna a posição do indice de uma letra
 int retornaIndiceLetra(char letra) {
     return ((int) letra) - 97;
 }
 
 // Verifica se uma palavra existe no dicionario. Se existir, imprime os seus dados.
-// 1 = Existe. 0 = Não existe.
 int verificaPalavraExisteDicionario(Dicionario* dicionario, char* palavra) {
     int indicePalavra = retornaIndiceLetra(palavra[0]);
     Palavra palavraDesejada;

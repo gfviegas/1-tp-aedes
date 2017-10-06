@@ -1,9 +1,7 @@
-//
-//  ListaDePalavras.c
-//  tp-1
-//
-//  Created by Viegas on 21/09/17.
-//  Copyright © 2017 Ciencia da Computacao - UFV. All rights reserved.
+/**
+ * Métodos do TAD ListaDePalavras
+ * @author Gustavo Viegas
+ */
 
 #include "Palavra.h"
 #include "ListaDePalavras.h"
@@ -66,16 +64,14 @@ void removePalavra(ListaDePalavras * lista, Palavra * palavra) {
 
 
 // Verifica se uma palavra existe na lista linear de palavras.
-// 1 = Existe, 0 = Não Existe.
 int verificaPalavra(ListaDePalavras * lista, char * valorPalavra, Palavra * palavra) {
-    //strtok(valorPalavra, "\n"); // Remove possiveis quebras de linha da palavra
     ApontadorPalavra  i = lista->primeiro->proximo;
     int encontrado = 0;
 
     while (i != NULL) {
         encontrado = (strcmp(i->info.valor, valorPalavra) == 0);
         if (encontrado == 1) {
-            *palavra = i->info;
+            *palavra = i->info; // Atribui o ponteiro passado por parâmetro a palavra encontrada.
             break;
         }
 
