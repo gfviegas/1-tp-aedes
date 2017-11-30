@@ -31,11 +31,14 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="../Alfabeto.c">
+		<Unit filename="../Dicionario.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../Alfabeto.h" />
 		<Unit filename="../Dicionario.h" />
+		<Unit filename="../LetraAlfabeto.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../LetraAlfabeto.h" />
 		<Unit filename="../ListaDePalavras.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -44,11 +47,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../NumeroLinha.h" />
-		<Unit filename="../Palavra.h" />
-		<Unit filename="../TadPalavra.c">
+		<Unit filename="../Palavra.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../TadPalavra.h" />
+		<Unit filename="../Palavra.h" />
 		<Unit filename="../main.c">
 			<Option compilerVar="CC" />
 		</Unit>

@@ -5,21 +5,15 @@
 
 #ifndef ListaDePalavras_h
 #define ListaDePalavras_h
+#define MAXTAM 10000
 
 #include <stdio.h>
 #include "Palavra.h"
 
-typedef struct CelulaPalavra* ApontadorPalavra; // Ponteiro para uma célula da lista de palavras
-typedef struct CelulaPalavra {
-    Palavra info;
-    ApontadorPalavra proximo;
-} CelulaPalavra; // Célula de uma lista encadeada de palavras
-
-typedef struct {
-    ApontadorPalavra primeiro;
-    ApontadorPalavra ultimo;
-    int quantidadePalavras;
-} ListaDePalavras;
+typedef struct  {
+    Palavra info[MAXTAM];
+    int primeiro,ultimo;
+} ListaDePalavras; // Célula de uma lista encadeada de palavras
 
 
 /**

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1507240447 source:c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\main.c
+1507303355 source:c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -15,29 +15,29 @@
 	<string.h>
 	"NumeroLinha.h"
 
-1507240977 source:c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\listadepalavras.c
+1512050725 source:c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\listadepalavras.c
 	"Palavra.h"
 	"ListaDePalavras.h"
 	<string.h>
 	<stdlib.h>
 	<stdio.h>
 
-1506604852 c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\palavra.h
+1507254043 c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\palavra.h
 	<string.h>
 	"NumeroLinha.h"
 
-1507119828 c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\listadepalavras.h
+1512050120 c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\listadepalavras.h
 	<stdio.h>
 	"Palavra.h"
 
-1507119828 source:c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\numerolinha.c
+1507254043 source:c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\numerolinha.c
 	<stdio.h>
 	"NumeroLinha.h"
 	<stdlib.h>
 
-1506604852 c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\numerolinha.h
+1507254043 c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\numerolinha.h
 
-1507119828 source:c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\palavra.c
+1507254043 source:c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\palavra.c
 	<stdlib.h>
 	<string.h>
 	<stdio.h>
@@ -55,20 +55,20 @@
 	"NumeroLinha.h"
 	"TadPalavra.h"
 
-1507240416 source:c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\dicionario.c
+1507301494 source:c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\dicionario.c
 	<stdio.h>
 	"Dicionario.h"
 	"LetraAlfabeto.h"
 
-1507121506 c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\dicionario.h
+1507254043 c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\dicionario.h
 	"LetraAlfabeto.h"
 
-1507119828 c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\letraalfabeto.h
+1507254043 c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\letraalfabeto.h
 	"ListaDePalavras.h"
 	"NumeroLinha.h"
 	"Palavra.h"
 
-1507210918 source:c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\letraalfabeto.c
+1507254043 source:c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\letraalfabeto.c
 	"LetraAlfabeto.h"
 	<stdio.h>
 	<stdlib.h>
