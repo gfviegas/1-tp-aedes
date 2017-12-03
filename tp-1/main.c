@@ -4,9 +4,6 @@
 
 #include "Dicionario.h"
 
-#define BUFFERSIZE 255
-#define FILENAMESIZE 200
-
 /**
  * Imprime um cabeçalho com instruções e descrição do programa
  * @method imprimeCabecalho
@@ -46,96 +43,10 @@ void imprimeInstrucoes () {
     printf("Insira 3 \t->\t Imprimir Dados de uma letra do Dicionário\n");
     printf("Insira 4 \t->\t Verificar se uma palavra existe no Dicionário\n");
     printf("Insira 5 \t->\t Remove palavra do dicionario\n");
-    printf("Insira 6 \t->\t Insere palavra no dicionario");
-}
-
-/**
- * Lê um arquivo a partir do caminho inserido pelo usuário e insere as palavras encontradas no dicionario já incializado
- * @method configuraDicionario
- * @param  dicionario          Ponteiro do tipo Dicionario que será manipulado
- * @return                     Inteiro representando se o arquivo existe e foi bem sucedido a configuração (1) ou não (0)
- */
-int configuraDicionario (Dicionario * dicionario) {
-    int linhaAtual = 1; // Inteiro que armazena a linha onde a palavra estará
-    char nomeArquivo[FILENAMESIZE]; // Caminho pro arquivo
-    char buffer[BUFFERSIZE]; // Buffer de uma linha (255 caracteres)
-    char * palavraAtual; // Armazenará a palavra atual em cada iteração
-    FILE *arquivo = NULL; // Arquivo TXT lido
-
-    printf("Entre o caminho do arquivo, com extensão: ");
-    scanf(" %[^\n]s", nomeArquivo);
-    arquivo = fopen(nomeArquivo, "r");
-    if (arquivo == NULL) {
-        printf("O arquivo %s não existe. Encerrando a execução. \n", nomeArquivo);
-        return 0;
-    }
-
-    while (fgets(buffer, BUFFERSIZE, (FILE*) arquivo)) {
-        palavraAtual = strtok (buffer, " \n\r\t");
-        while (palavraAtual != NULL) {
-            inserePalavraDicionario(dicionario, palavraAtual, linhaAtual);
-            palavraAtual = strtok (NULL, " \n\r\t");
-        }
-        linhaAtual++;
-    }
-
-    fclose(arquivo);
-    return 1;
-}
-
-/**
- * Lê uma letra para se imprimir as palavras do dicionário inicializados por essa letra
- * @method promptLetraDicionario
- * @param  dicionario          Ponteiro do tipo Dicionario que será manipulado
- */
-void promptLetraDicionario (Dicionario * dicionario) {
-    char letraDesejada;
-    printf("Entre a letra que deseja imprimir os dados: ");
-    scanf(" %c", &letraDesejada);
-    imprimeLetraDicionario(dicionario, letraDesejada);
-}
-
-/**
- * Lê uma palavra para se verificar se ela existe no dicionário
- * @method promptPalavraDicionario
- * @param  dicionario          Ponteiro do tipo Dicionario que será manipulado
- */
-void promptPalavraDicionario (Dicionario * dicionario) {
-    char palavraDesejada[50];
-    printf("Entre a palavra que deseja verificar (max 50 caracteres): ");
-    scanf(" %[^\n]s", palavraDesejada);
-
-    if (verificaPalavraExisteDicionario(dicionario, palavraDesejada) == 0) {
-        printf("A palavra %s não existe no dicionário. \n", palavraDesejada);
-    }
-}
-
-/**
- * Lê uma palavra e uma linha, e as insere no dicionário
- * @method promptInserePalavra
- * @param  dicionario          Ponteiro do tipo Dicionario que será manipulado
- */
-void promptInserePalavra(Dicionario * dicionario) {
-    char palavraDesejada[50];
-    int linha;
-    printf("Entre a palavra a ser inserida: \n");
-    scanf(" %[^\n]s", palavraDesejada);
-    printf("Entre com a linha a ser inserida: \n");
-    scanf(" %d", &linha);
-    inserePalavraDicionario(dicionario, palavraDesejada, linha);
-
-}
-
-/**
- * Lê uma palavra e a remove do dicionário, se existir
- * @method promptRemovePalavra
- * @param  dicionario          Ponteiro do tipo Dicionario que será manipulado
- */
-void promptRemovePalavra(Dicionario *dicionario) {
-    char palavraDesejada[50];
-    printf("Entre a palavra que deseja remover (max 50 caracteres): ");
-    scanf(" %[^\n]s", palavraDesejada);
-    removePalavraDicionario(dicionario, palavraDesejada);
+    printf("Insira 6 \t->\t Insere palavra no dicionario\n");
+    printf("\t **NOVOS MÉTODOS:**\n");
+    printf("Insira 7 \t->\t Ordena uma lista de palavras de uma letra com um algoritmo desejado\n");
+    printf("Insira 8 \t->\t Ordena todo o dicionário com um algoritmo desejado");
 }
 
 /**
@@ -174,6 +85,12 @@ int lerOperacao (Dicionario * dicionario) {
             break;
         case 6:
             promptInserePalavra(dicionario);
+            break;
+        case 7:
+            promptOrdenarLetraAlfabeto(dicionario);
+            break;
+        case 8:
+            promptOrdenarDicionario(dicionario);
             break;
         default:
             printf("Código inválido!! \n");

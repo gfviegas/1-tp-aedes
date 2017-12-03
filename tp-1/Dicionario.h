@@ -73,5 +73,61 @@ int retornaIndiceLetra(char letra);
  */
 int verificaPalavraExisteDicionario(Dicionario* dicionario, char* palavra);
 
+/**
+ * Lê um arquivo a partir do caminho inserido pelo usuário e insere as palavras encontradas no dicionario já incializado
+ * @method configuraDicionario
+ * @param  dicionario          Ponteiro do tipo Dicionario que será manipulado
+ * @return                     Inteiro representando se o arquivo existe e foi bem sucedido a configuração (1) ou não (0)
+ */
+int configuraDicionario (Dicionario * dicionario);
+
+/**
+ * Lê uma letra para se imprimir as palavras do dicionário inicializados por essa letra
+ * @method promptLetraDicionario
+ * @param  dicionario          Ponteiro do tipo Dicionario que será manipulado
+ */
+void promptLetraDicionario (Dicionario * dicionario);
+
+/**
+ * Lê uma palavra para se verificar se ela existe no dicionário
+ * @method promptPalavraDicionario
+ * @param  dicionario          Ponteiro do tipo Dicionario que será manipulado
+ */
+void promptPalavraDicionario (Dicionario * dicionario);
+
+/**
+ * Lê uma palavra e uma linha, e as insere no dicionário
+ * @method promptInserePalavra
+ * @param  dicionario          Ponteiro do tipo Dicionario que será manipulado
+ */
+void promptInserePalavra(Dicionario * dicionario);
+
+/**
+ * Lê uma palavra e a remove do dicionário, se existir
+ * @method promptRemovePalavra
+ * @param  dicionario          Ponteiro do tipo Dicionario que será manipulado
+ */
+void promptRemovePalavra(Dicionario *dicionario);
+
+/**
+ * Pede um método de ordenação ao usuário e retorna o seu código
+ * @method promptRemovePalavra
+ */
+int promptMetodoOrdenacao();
+
+/**
+ * Lê uma letra e um método de ordenação de algoritmo
+ * @method promptOrdenarLetraAlfabeto
+ * @param  dicionario          Ponteiro do tipo Dicionario que será manipulado
+ * @return                    Inteiro que representa o sucesso ou não da entrada
+ */
+int promptOrdenarLetraAlfabeto(Dicionario *dicionario);
+
+/**
+ * Lê um método de ordenação de algoritmo para o dicionário completo
+ * @method promptOrdenarLetraAlfabeto
+ * @param  dicionario          Ponteiro do tipo Dicionario que será manipulado
+ */
+void promptOrdenarDicionario(Dicionario *dicionario);
 
 #endif // DICIONARIO_H_INCLUDED

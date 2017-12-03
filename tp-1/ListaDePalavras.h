@@ -5,14 +5,14 @@
 
 #ifndef ListaDePalavras_h
 #define ListaDePalavras_h
-#define MAXTAM 10000
+#define MAXTAM 100
 
 #include <stdio.h>
 #include "Palavra.h"
 
-typedef struct  {
+typedef struct {
     Palavra info[MAXTAM];
-    int primeiro,ultimo;
+    int quantidade;
 } ListaDePalavras; // Célula de uma lista encadeada de palavras
 
 
