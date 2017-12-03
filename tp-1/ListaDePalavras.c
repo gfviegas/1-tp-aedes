@@ -8,6 +8,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <time.h>
 
 // Cria uma lista de palavras.
 void criaListaDePalavras(ListaDePalavras * lista) {
@@ -77,4 +78,38 @@ void imprimeListaPalavras(ListaDePalavras * lista) {
             imprimePalavra(&lista->info[i]);
         }
     }
+}
+
+// Imprime os dados de uma lista de palavras ordenados pelo método Selection Sort
+void selectionSort(ListaDePalavras lista) {
+    clock_t ticks[2];
+    double tempo;
+    int i, j, min;
+    int n = lista.quantidade;
+    int comparacoes = 0, trocas = 0;
+    Palavra aux;
+
+    ticks[0] = clock();
+    for (i = 0; i < n - 1; i++) {
+        min = i;
+        for (j = i + 1; j < n; j++) {
+            comparacoes++;
+            if (strcmp(lista.info[j].valor, lista.info[min].valor) < 0) min = j;
+        }
+        
+        aux = lista.info[min];
+        lista.info[min] = lista.info[i];
+        lista.info[i] = aux;
+        trocas++;
+    }
+    
+    ticks[1] = clock();
+    tempo = (ticks[1] - ticks[0]) * 1000.0 / CLOCKS_PER_SEC;
+    
+    printf("\n**Lista ordenada pelo método de Selection Sort**\n");
+
+    imprimeListaPalavras(&lista);
+    printf("\t Tempo gasto: %g ms. \n", tempo);
+    printf("\t Comparações feitas: %d. \n", comparacoes);
+    printf("\t Trocas feitas: %d. \n", trocas);
 }

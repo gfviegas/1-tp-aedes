@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include "Dicionario.h"
 #include "LetraAlfabeto.h"
+#include "ListaDePalavras.h"
 
 #define BUFFERSIZE 255
 #define FILENAMESIZE 200
@@ -189,13 +190,14 @@ int promptOrdenarLetraAlfabeto(Dicionario *dicionario) {
     }
     
     codigoOrdenacao = promptMetodoOrdenacao();
+    
     switch (codigoOrdenacao) {
         case 0:
             // CHAMADA PRA OPERACAO DE BUBBLE SORT
             // ex: ordenarListaBubble(dicionario->letras[indiceLetraDesejada]->listaPalavra);
             break;
         case 1:
-            // CHAMADA PRA OPERACAO DE SELECTION SORT
+            selectionSort(dicionario->letras[indiceLetraDesejada].listaPalavra);
             break;
         case 2:
             // CHAMADA PRA OPERACAO DE INSERT SORT

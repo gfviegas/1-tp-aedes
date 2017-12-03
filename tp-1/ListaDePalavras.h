@@ -72,4 +72,11 @@ int quantidadePalavras(ListaDePalavras* lista);
  */
 void imprimeListaPalavras(ListaDePalavras* lista);
 
+/**
+ * Imprime os dados de uma lista de palavras ordenados pelo método Selection Sort
+ * @method selectionSort
+ * @param  lista                A copia de uma lista do tipo ListaDePalavras que será ordenado
+ */
+void selectionSort(ListaDePalavras lista);
+
 #endif /* ListaDePalavras_h */

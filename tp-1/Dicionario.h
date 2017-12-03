@@ -6,6 +6,7 @@
 #ifndef DICIONARIO_H_INCLUDED
 #define DICIONARIO_H_INCLUDED
 #include "LetraAlfabeto.h"
+#include "ListaDePalavras.h"
 
 #define TAMLETRAS 26
 
