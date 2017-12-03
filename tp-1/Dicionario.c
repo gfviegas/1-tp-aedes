@@ -162,9 +162,10 @@ int promptMetodoOrdenacao() {
     printf("\nOs métodos de ordenação disponíveis são: \n\n");
     printf("Insira 0 \t->\t Bubble Sort (Método da Bolha)\n");
     printf("Insira 1 \t->\t Selection Sort (Método da Seleção)\n");
-    printf("Insira 2 \t->\t Shell Sort\n");
-    printf("Insira 3 \t->\t Quick Sort\n");
-    printf("Insira 4 \t->\t Heap Sort\n");
+    printf("Insira 2 \t->\t Insert Sort (Método de Inserção)\n");
+    printf("Insira 3 \t->\t Shell Sort\n");
+    printf("Insira 4 \t->\t Quick Sort\n");
+    printf("Insira 5 \t->\t Heap Sort\n");
 
     printf("Digite o código desejado: ");
     scanf(" %d", &codigo);
@@ -191,18 +192,21 @@ int promptOrdenarLetraAlfabeto(Dicionario *dicionario) {
     switch (codigoOrdenacao) {
         case 0:
             // CHAMADA PRA OPERACAO DE BUBBLE SORT
-            // ex: ordenarListaBubble(dicionario->letras[indiceLetraDesejada]);
+            // ex: ordenarListaBubble(dicionario->letras[indiceLetraDesejada]->listaPalavra);
             break;
         case 1:
             // CHAMADA PRA OPERACAO DE SELECTION SORT
             break;
         case 2:
-            // CHAMADA PRA OPERACAO DE SHELL SORT
+            // CHAMADA PRA OPERACAO DE INSERT SORT
             break;
         case 3:
-            // CHAMADA PRA OPERACAO DE QUICK SORT
+            // CHAMADA PRA OPERACAO DE SHELL SORT
             break;
         case 4:
+            // CHAMADA PRA OPERACAO DE QUICK SORT
+            break;
+        case 5:
             // CHAMADA PRA OPERACAO DE HEAP SORT
             break;
         default:
