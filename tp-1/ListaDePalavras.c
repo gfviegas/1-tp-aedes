@@ -109,7 +109,65 @@ void selectionSort(ListaDePalavras lista) {
     printf("\n**Lista ordenada pelo método de Selection Sort**\n");
 
     imprimeListaPalavras(&lista);
-    printf("\t Tempo gasto: %g ms. \n", tempo);
-    printf("\t Comparações feitas: %d. \n", comparacoes);
-    printf("\t Trocas feitas: %d. \n", trocas);
+    printf("\t Tempo gasto: %.3f ms. \n", tempo);
+    printf("\t Núm aprox. de comparações feitas: %d. \n", comparacoes);
+    printf("\t Núm aprox. de trocas feitas: %d. \n", trocas);
+}
+
+// Faz as particoes e trocas do método Quick Sort
+void qsParticao(int esq, int dir, int *i, int *j, Palavra *palavras, int *comparacoes, int *trocas) {
+    Palavra pivo, aux;
+    *i = esq;
+    *j = dir;
+    
+    pivo = palavras[(*i + *j)/2]; /* obtem o pivo x */
+    do {
+        while (strcmp(pivo.valor, palavras[*i].valor) > 0) {
+            (*i)++;
+            (*comparacoes)++;
+        }
+        while (strcmp(pivo.valor, palavras[*j].valor) < 0) {
+            (*j)--;
+            (*comparacoes)++;
+        }
+
+        if (*i <= *j) {
+            aux = palavras[*i];
+            palavras[*i] = palavras[*j];
+            palavras[*j] = aux;
+            
+            (*i)++; (*j)--;
+            (*comparacoes)++;
+            (*trocas)++;
+        }
+    } while (*i <= *j);
+}
+
+// Manipula os valores de esquerda e direita e particiona o vetor até ser ordenado pelo método Quick Sort
+void qsOrdena(int esq, int dir, Palavra *palavras, int *comparacoes, int *trocas) {
+    int i, j;
+    qsParticao(esq, dir, &i, &j, palavras, comparacoes, trocas);
+    if (esq < j) qsOrdena(esq, j, palavras, comparacoes, trocas);
+    if (i < dir) qsOrdena(i, dir, palavras, comparacoes, trocas);
+}
+
+// Imprime os dados de uma lista de palavras ordenados pelo método Quick Sort
+void quickSort(ListaDePalavras lista) {
+    clock_t ticks[2];
+    double tempo;
+    int n = lista.quantidade;
+    int comparacoes = 0, trocas = 0;
+    
+    ticks[0] = clock();
+    qsOrdena(0, n - 1, lista.info, &comparacoes, &trocas);
+    
+    ticks[1] = clock();
+    tempo = (ticks[1] - ticks[0]) * 1000.0 / CLOCKS_PER_SEC;
+    
+    printf("\n**Lista ordenada pelo método de Quick Sort**\n");
+    
+    imprimeListaPalavras(&lista);
+    printf("\t Tempo gasto: %.3f ms. \n", tempo);
+    printf("\t Núm aprox. de comparações feitas: %d. \n", comparacoes);
+    printf("\t Núm aprox. de trocas feitas: %d. \n", trocas);
 }

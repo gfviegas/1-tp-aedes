@@ -5,7 +5,7 @@
 
 #ifndef ListaDePalavras_h
 #define ListaDePalavras_h
-#define MAXTAM 100
+#define MAXTAM 500
 
 #include <stdio.h>
 #include "Palavra.h"
@@ -78,5 +78,37 @@ void imprimeListaPalavras(ListaDePalavras* lista);
  * @param  lista                A copia de uma lista do tipo ListaDePalavras que será ordenado
  */
 void selectionSort(ListaDePalavras lista);
+
+
+/**
+ * Imprime os dados de uma lista de palavras ordenados pelo método Quick Sort
+ * @method quickSort
+ * @param  lista                A copia de uma lista do tipo ListaDePalavras que será ordenado
+ */
+void quickSort(ListaDePalavras lista);
+
+/**
+ * Faz as particoes e trocas do método Quick Sort
+ * @method qsParticao
+ * @param  esq          Um inteiro representando o indice da esquerda
+ * @param  dir          Um inteiro representando o indice da direita
+ * @param  i            Um ponteiro de inteiro representando onde está a particao pela direita
+ * @param  j            Um ponteiro de inteiro representando onde está a particao pela esquerda
+ * @param  palavras     O vetor de palavras a ser ordenado
+ * @param  comparacoes  Um ponteiro de inteiro representando a quantidade de comparacoes feita
+ * @param  trocas       Um ponteiro de inteiro representando a quantidade de trocas feita
+ */
+void qsParticao(int esq, int dir, int *i, int *j, Palavra *palavras, int *comparacoes, int *trocas);
+
+/**
+ * Manipula os valores de esquerda e direita e particiona o vetor até ser ordenado pelo método Quick Sort
+ * @method qsOrdena
+ * @param  esq          Um inteiro representando o indice da esquerda
+ * @param  dir          Um inteiro representando o indice da direita
+ * @param  palavras     O vetor de palavras a ser ordenado
+ * @param  comparacoes  Um ponteiro de inteiro representando a quantidade de comparacoes feita
+ * @param  trocas       Um ponteiro de inteiro representando a quantidade de trocas feita
+ */
+void qsOrdena(int esq, int dir, Palavra *palavras, int *comparacoes, int *trocas);
 
 #endif /* ListaDePalavras_h */

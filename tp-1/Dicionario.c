@@ -206,7 +206,7 @@ int promptOrdenarLetraAlfabeto(Dicionario *dicionario) {
             // CHAMADA PRA OPERACAO DE SHELL SORT
             break;
         case 4:
-            // CHAMADA PRA OPERACAO DE QUICK SORT
+            quickSort(dicionario->letras[indiceLetraDesejada].listaPalavra);
             break;
         case 5:
             // CHAMADA PRA OPERACAO DE HEAP SORT
