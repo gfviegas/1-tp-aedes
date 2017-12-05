@@ -27,7 +27,7 @@
 	<string.h>
 	"NumeroLinha.h"
 
-1512442383 c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\listadepalavras.h
+1512445295 c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\listadepalavras.h
 	<stdio.h>
 	"Palavra.h"
 
@@ -56,7 +56,7 @@
 	"NumeroLinha.h"
 	"TadPalavra.h"
 
-1512436738 source:c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\dicionario.c
+1512442381 source:c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\dicionario.c
 	<stdio.h>
 	"Dicionario.h"
 	"LetraAlfabeto.h"

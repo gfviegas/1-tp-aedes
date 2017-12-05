@@ -238,27 +238,32 @@ void shellsort(ListaDePalavras lista){
 }
 
 void insertionsort(ListaDePalavras lista){
-    //clock_t ticks[2];
-    //double tempo;
+    clock_t ticks[2];
+    double tempo;
     int i,j,trocas=0,comparacoes=0;
     Palavra troca;
-   //  ticks[0] = clock();
-    for(i=1; i < lista.quantidade; i++){
-        troca = lista->info[i];
+    ticks[0] = clock();
+    for(i=1; i <lista.quantidade ; i++){
+        troca = lista.info[i];
         j = i - 1;
-        while( (j>0) && (strcmp(lista.info[j].valor,troca.valor) < 0){
+        while( (j>=0) && (strcmp(lista.info[j].valor,troca.valor) > 0)){
                 lista.info[j + 1] = lista.info[j];
+                trocas++;
                 j--;
                 comparacoes++;
         }
-        lista.info[j] = troca;
+        lista.info[j+1] = troca;
         trocas++;
     }
-   // ticks[1] = clock();
-    //tempo = (ticks[1] - ticks[0]) * 1000.0 / CLOCKS_PER_SEC;
+    ticks[1] = clock();
+    tempo = (ticks[1] - ticks[0]) * 1000.0 / CLOCKS_PER_SEC;
     printf("\n**Lista ordenada pelo método Insertion sort**\n");
     imprimeListaPalavras(&lista);
-   // printf("\t Tempo gasto: %.30f ms. \n", tempo);
+    printf("\t Tempo gasto: %.30f ms. \n", tempo);
     printf("\t Núm aprox. de comparações feitas: %d. \n", comparacoes);
     printf("\t Núm aprox. de trocas feitas: %d. \n", trocas);
 }
+
+
+
+void heapsort(ListaDePalavras lista)

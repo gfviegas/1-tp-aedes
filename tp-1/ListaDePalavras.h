@@ -115,6 +115,6 @@ void bubblesort(ListaDePalavras lista);
 
 void shellsort(ListaDePalavras lista);
 
-void insertionsort(ListaDePalavras lista)
+void insertionsort(ListaDePalavras lista);
 
 #endif /* ListaDePalavras_h */
