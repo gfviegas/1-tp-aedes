@@ -95,15 +95,15 @@ int configuraDicionario (Dicionario * dicionario) {
     char buffer[BUFFERSIZE]; // Buffer de uma linha (255 caracteres)
     char * palavraAtual; // Armazenará a palavra atual em cada iteração
     FILE *arquivo = NULL; // Arquivo TXT lido
-    
+
     printf("Entre o caminho do arquivo, com extensão: ");
-    scanf(" %[^\n]s", nomeArquivo);
+    scanf(" %s", nomeArquivo);
     arquivo = fopen(nomeArquivo, "r");
     if (arquivo == NULL) {
         printf("O arquivo %s não existe. Encerrando a execução. \n", nomeArquivo);
         return 0;
     }
-    
+
     while (fgets(buffer, BUFFERSIZE, (FILE*) arquivo)) {
         palavraAtual = strtok (buffer, " \n\r\t");
         while (palavraAtual != NULL) {
@@ -112,7 +112,7 @@ int configuraDicionario (Dicionario * dicionario) {
         }
         linhaAtual++;
     }
-    
+
     fclose(arquivo);
     return 1;
 }
@@ -130,7 +130,7 @@ void promptPalavraDicionario (Dicionario * dicionario) {
     char palavraDesejada[50];
     printf("Entre a palavra que deseja verificar (max 50 caracteres): ");
     scanf(" %[^\n]s", palavraDesejada);
-    
+
     if (verificaPalavraExisteDicionario(dicionario, palavraDesejada) == 0) {
         printf("A palavra %s não existe no dicionário. \n", palavraDesejada);
     }
@@ -145,7 +145,7 @@ void promptInserePalavra(Dicionario * dicionario) {
     printf("Entre com a linha a ser inserida: \n");
     scanf(" %d", &linha);
     inserePalavraDicionario(dicionario, palavraDesejada, linha);
-    
+
 }
 
 // Lê uma palavra e a remove do dicionário, se existir
@@ -159,7 +159,7 @@ void promptRemovePalavra(Dicionario *dicionario) {
 // Pede um método de ordenação ao usuário e retorna o seu código
 int promptMetodoOrdenacao() {
     int codigo;
-    
+
     printf("\nOs métodos de ordenação disponíveis são: \n\n");
     printf("Insira 0 \t->\t Bubble Sort (Método da Bolha)\n");
     printf("Insira 1 \t->\t Selection Sort (Método da Seleção)\n");
@@ -170,7 +170,7 @@ int promptMetodoOrdenacao() {
 
     printf("Digite o código desejado: ");
     scanf(" %d", &codigo);
-    
+
     return codigo;
 }
 
@@ -179,31 +179,30 @@ int promptOrdenarLetraAlfabeto(Dicionario *dicionario) {
     char letraDesejada;
     int codigoOrdenacao;
     int indiceLetraDesejada;
-    
+
     printf("Entre a letra (minúscula) que deseja visualizar ordenados: ");
     scanf(" %c", &letraDesejada);
     indiceLetraDesejada = (int) letraDesejada - 97;
-    
+
     if (indiceLetraDesejada > 25 || indiceLetraDesejada < 0) {
         printf("\nA letra desejada é inválida!! \n");
         return 0;
     }
-    
+
     codigoOrdenacao = promptMetodoOrdenacao();
-    
+
     switch (codigoOrdenacao) {
         case 0:
-            // CHAMADA PRA OPERACAO DE BUBBLE SORT
-            // ex: ordenarListaBubble(dicionario->letras[indiceLetraDesejada]->listaPalavra);
+            bubblesort(dicionario->letras[indiceLetraDesejada].listaPalavra);
             break;
         case 1:
             selectionSort(dicionario->letras[indiceLetraDesejada].listaPalavra);
             break;
         case 2:
-            // CHAMADA PRA OPERACAO DE INSERT SORT
+            insertionsort(dicionario->letras[indiceLetraDesejada].listaPalavra);
             break;
         case 3:
-            // CHAMADA PRA OPERACAO DE SHELL SORT
+            shellsort(dicionario->letras[indiceLetraDesejada].listaPalavra);
             break;
         case 4:
             quickSort(dicionario->letras[indiceLetraDesejada].listaPalavra);

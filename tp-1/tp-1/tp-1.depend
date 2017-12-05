@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1507303355 source:c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\main.c
+1512436094 source:c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -15,18 +15,19 @@
 	<string.h>
 	"NumeroLinha.h"
 
-1512050725 source:c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\listadepalavras.c
+1512436603 source:c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\listadepalavras.c
 	"Palavra.h"
 	"ListaDePalavras.h"
 	<string.h>
 	<stdlib.h>
 	<stdio.h>
+	<time.h>
 
 1507254043 c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\palavra.h
 	<string.h>
 	"NumeroLinha.h"
 
-1512050120 c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\listadepalavras.h
+1512442383 c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\listadepalavras.h
 	<stdio.h>
 	"Palavra.h"
 
@@ -55,13 +56,15 @@
 	"NumeroLinha.h"
 	"TadPalavra.h"
 
-1507301494 source:c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\dicionario.c
+1512436738 source:c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\dicionario.c
 	<stdio.h>
 	"Dicionario.h"
 	"LetraAlfabeto.h"
+	"ListaDePalavras.h"
 
-1507254043 c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\dicionario.h
+1512436094 c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\dicionario.h
 	"LetraAlfabeto.h"
+	"ListaDePalavras.h"
 
 1507254043 c:\users\heitor\desktop\tpaeds\1-tp-aedes\tp-1\letraalfabeto.h
 	"ListaDePalavras.h"

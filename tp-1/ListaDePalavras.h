@@ -111,4 +111,10 @@ void qsParticao(int esq, int dir, int *i, int *j, Palavra *palavras, int *compar
  */
 void qsOrdena(int esq, int dir, Palavra *palavras, int *comparacoes, int *trocas);
 
+void bubblesort(ListaDePalavras lista);
+
+void shellsort(ListaDePalavras lista);
+
+void insertionsort(ListaDePalavras lista)
+
 #endif /* ListaDePalavras_h */
