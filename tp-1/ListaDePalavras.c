@@ -173,7 +173,7 @@ void quickSort(ListaDePalavras lista) {
 }
 
 // Imprime os dados de uma lista de palavras ordenados pelo método Bubble Sort
-void bubbleSort(ListaDePalavras lista){
+void bubbleSort(ListaDePalavras lista) {
     clock_t ticks[2];
     int i,j,comparacoes = 0, trocas = 0;
     double tempo;
@@ -205,7 +205,7 @@ void bubbleSort(ListaDePalavras lista){
 }
 
 // Imprime os dados de uma lista de palavras ordenados pelo método Shell Sort
-void shellSort(ListaDePalavras lista){
+void shellSort(ListaDePalavras lista) {
     clock_t ticks[2];
     int h = 1, i, j, trocas = 0, comparacoes = 0;
     double tempo;
@@ -239,7 +239,7 @@ void shellSort(ListaDePalavras lista){
     printf("\n**Lista ordenada pelo método Shell Sort**\n");
     
     imprimeListaPalavras(&lista);
-    printf("\t Tempo gasto: %.30f ms. \n", tempo);
+    printf("\t Tempo gasto: %.3f ms. \n", tempo);
     printf("\t Núm aprox. de comparações feitas: %d. \n", comparacoes);
     printf("\t Núm aprox. de trocas feitas: %d. \n", trocas);
 
@@ -272,7 +272,7 @@ void insertionSort(ListaDePalavras lista) {
     printf("\n**Lista ordenada pelo método Insertion sort**\n");
     
     imprimeListaPalavras(&lista);
-    printf("\t Tempo gasto: %.30f ms. \n", tempo);
+    printf("\t Tempo gasto: %.3f ms. \n", tempo);
     printf("\t Núm aprox. de comparações feitas: %d. \n", comparacoes);
     printf("\t Núm aprox. de trocas feitas: %d. \n", trocas);
 }
