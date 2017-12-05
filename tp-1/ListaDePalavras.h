@@ -138,4 +138,8 @@ void insertionSort(ListaDePalavras lista);
  * @param  lista                A copia de uma lista do tipo ListaDePalavras que será ordenado
  */
 void heapSort(ListaDePalavras lista);
+
+
+void hsRefaz(int esq, int dir, Palavra *palavras, int *trocas, int *comparacoes);
+void hsConstroi(Palavra *palavras, int n, int *trocas, int*comparacoes);
 #endif /* ListaDePalavras_h */

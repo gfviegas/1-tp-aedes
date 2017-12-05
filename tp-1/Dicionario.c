@@ -208,7 +208,7 @@ int promptOrdenarLetraAlfabeto(Dicionario *dicionario) {
             quickSort(dicionario->letras[indiceLetraDesejada].listaPalavra);
             break;
         case 5:
-            // CHAMADA PRA OPERACAO DE HEAP SORT
+            heapSort(dicionario->letras[indiceLetraDesejada].listaPalavra);
             break;
         default:
             printf("\nCódigo de ordenação inválido!! \n");
@@ -243,7 +243,7 @@ void promptOrdenarDicionario(Dicionario *dicionario) {
                 quickSort(dicionario->letras[i].listaPalavra);
                 break;
             case 5:
-                // CHAMADA PRA OPERACAO DE HEAP SORT
+                heapSort(dicionario->letras[i].listaPalavra);
                 break;
         }
     }

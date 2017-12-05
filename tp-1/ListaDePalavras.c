@@ -277,6 +277,63 @@ void insertionSort(ListaDePalavras lista) {
     printf("\t Núm aprox. de trocas feitas: %d. \n", trocas);
 }
 
+// Reconstitui a condicao do Heap
+void hsRefaz(int esq, int dir, Palavra *palavras, int *trocas, int*comparacoes) {
+    int j = esq * 2;
+    Palavra aux = palavras[esq];
+    while (j <= dir) {
+        (*comparacoes) += 2;
+        if ((j < dir) && (strcmp(palavras[j].valor, palavras[j+1].valor) < 0)) j++;
+        if (strcmp(aux.valor, palavras[j].valor) >= 0) break;
+        (*trocas)++;
+        palavras[esq] = palavras[j];
+        esq = j; j = esq * 2;
+    }
+    palavras[esq] = aux;
+}
+
+// Constroi o Heap
+void hsConstroi(Palavra *palavras, int n, int *trocas, int *comparacoes) {
+    int esq;
+    esq = n / 2 + 1;
+    while (esq > 1)
+    {
+        esq--;
+        hsRefaz(esq, n, palavras, trocas, comparacoes);
+    }
+}
+
 // Imprime os dados de uma lista de palavras ordenados pelo método Heap Sort
 void heapSort(ListaDePalavras lista) {
+    int esq, dir;
+    Palavra aux;
+    int n = lista.quantidade;
+    
+    clock_t ticks[2];
+    double tempo;
+    int trocas = 0,comparacoes = 0;
+    ticks[0] = clock();
+    
+    hsConstroi(lista.info, n, &trocas, &comparacoes); /* constroi o heap */
+    esq = 1;
+    dir = n;
+    
+    while (dir > 1) { /* ordena o vetor */
+        aux = lista.info[1];
+        lista.info[1] = lista.info[dir];
+        lista.info[dir] = aux;
+        dir--;
+        hsRefaz(esq, dir, lista.info, &trocas, &comparacoes);
+    }
+    
+    ticks[1] = clock();
+    tempo = (ticks[1] - ticks[0]) * 1000.0 / CLOCKS_PER_SEC;
+    
+    printf("\n**Lista ordenada pelo método Heap Sort**\n");
+    
+    imprimeListaPalavras(&lista);
+    printf("\t Tempo gasto: %.3f ms. \n", tempo);
+    printf("\t Núm aprox. de comparações feitas: %d. \n", comparacoes);
+    printf("\t Núm aprox. de trocas feitas: %d. \n", trocas);
 }
+
