@@ -16,14 +16,14 @@ typedef struct{
 
 /**
  * Configura uma nova instância de uma variável do tipo Dicionário.
- * @method criaLetraAlfabeto
+ * @function criaLetraAlfabeto
  * @param  letra            Ponteiro do tipo LetraAlfabeto que será manipulado
  */
 void criaLetraAlfabeto(LetraAlfabeto *letra);
 
 /**
  * Preenche o struct LetraAlfabeto com o caracter desejado
- * @method preencheCaracter
+ * @function preencheCaracter
  * @param  letra            Ponteiro do tipo LetraAlfabeto que será manipulado
  * @param  caracter         Caracter da letra que será preenchido (Ex: a, b, j, etc..)
  */
@@ -31,7 +31,7 @@ void preencheCaracter(LetraAlfabeto *letra, char caracter);
 
 /**
  * Retorna o caracter do struct LetraAlfabeto
- * @method retornaCaracter
+ * @function retornaCaracter
  * @param  letra           Ponteiro do tipo LetraAlfabeto que será manipulado
  * @return                 Char representando a letra referente ao struct (Ex: a, b, j, etc...)
  */
@@ -39,7 +39,7 @@ char retornaCaracter(LetraAlfabeto *letra);
 
 /**
  * Imprime a letra representada e as palavras e suas linhas que comecam com essa letra
- * @method imprimeLetraAlfabeto
+ * @function imprimeLetraAlfabeto
  * @param  letra            Ponteiro do tipo LetraAlfabeto que será manipulado
  */
 void imprimeLetraAlfabeto(LetraAlfabeto *letra);

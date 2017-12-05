@@ -6,7 +6,7 @@
 
 /**
  * Imprime um cabeçalho com instruções e descrição do programa
- * @method imprimeCabecalho
+ * @function imprimeCabecalho
  */
 void imprimeCabecalho () {
     printf("|| ||\n");
@@ -20,7 +20,7 @@ void imprimeCabecalho () {
 
 /**
  * Imprime uma linha para dividir o conteúdo no buffer
- * @method imprimeLinha
+ * @function imprimeLinha
  */
 void imprimeLinha () {
     int i;
@@ -33,7 +33,7 @@ void imprimeLinha () {
 
 /**
  * Imprime instruções de códigos a serem inseridos para o programa executar
- * @method imprimeInstrucoes
+ * @function imprimeInstrucoes
  */
 void imprimeInstrucoes () {
     printf("Os códigos e operações disponíveis são: \n\n");
@@ -51,7 +51,7 @@ void imprimeInstrucoes () {
 
 /**
  * Lê um código e executa a ação a ela vinculada
- * @method lerOperacao
+ * @function lerOperacao
  * @param  dicionario          Ponteiro do tipo Dicionario que será manipulado
  * @return                     Inteiro representando se o programa deve continuar executando (1) ou não (0)
  */

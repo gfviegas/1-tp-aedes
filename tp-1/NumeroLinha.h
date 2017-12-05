@@ -20,14 +20,14 @@ typedef struct {
 
 /**
  * Configura uma nova instância de uma variável do tipo ListaLinhas e inicializa a célula-cabeça.
- * @method criaListaDePalavras
+ * @function criaListaDePalavras
  * @param  lista               Ponteiro do tipo ListaLinhas que será manipulado
  */
 void criaListaNumeroLinhas(ListaLinhas *lista);
 
 /**
  * Insere uma nova linha à lista linear, se não existir.
- * @method insereNovoNumeroLinha
+ * @function insereNovoNumeroLinha
  * @param  lista                 Ponteiro do tipo ListaLinhas que será manipulado
  * @param  numero                Inteiro representando o número da linha a ser inserido
  */
@@ -35,14 +35,14 @@ void insereNovoNumeroLinha(ListaLinhas *lista, int numero);
 
 /**
  * Remove uma linha do fim da lista linear
- * @method insereNovoNumeroLinha
+ * @function insereNovoNumeroLinha
  * @param  lista                 Ponteiro do tipo ListaLinhas que será manipulado
  */
 void retiraNumeroLinha(ListaLinhas *lista);
 
 /**
  * Verifica se uma linha existe na lista linear
- * @method verificaNumeroLinha
+ * @function verificaNumeroLinha
  * @param  lista               Ponteiro do tipo ListaLinhas que será manipulado
  * @param  numero              Inteiro representando o número da linha a ser inserido
  * @return                     Inteiro representando a existência (1) ou não (0) da linha na lista linear
@@ -51,7 +51,7 @@ int verificaNumeroLinha(ListaLinhas *lista, int numero);
 
 /**
  * Retorna a quantdade de linhas na lista linear
- * @method quantidadeLinhas
+ * @function quantidadeLinhas
  * @param  lista            Ponteiro do tipo ListaLinhas que será manipulado
  * @return                  Inteiro representando a quantidade de linhas existentes na lista linear
  */
@@ -59,7 +59,7 @@ int quantidadeLinhas(ListaLinhas *lista);
 
 /**
  * Imprime os dados de uma lista linear de linhas.
- * @method imprimeLinhas
+ * @function imprimeLinhas
  * @param  lista         Ponteiro do tipo ListaLinhas que será manipulado
  */
 void imprimeLinhas(ListaLinhas *lista);

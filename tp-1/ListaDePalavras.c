@@ -172,64 +172,72 @@ void quickSort(ListaDePalavras lista) {
     printf("\t Núm aprox. de trocas feitas: %d. \n", trocas);
 }
 
-void bubblesort(ListaDePalavras lista){
+// Imprime os dados de uma lista de palavras ordenados pelo método Bubble Sort
+void bubbleSort(ListaDePalavras lista){
     clock_t ticks[2];
     int i,j,comparacoes = 0, trocas = 0;
     double tempo;
     Palavra troca;
-     ticks[0] = clock();
-    for(i=0; i< lista.quantidade -1;i++){
-        for(j=i+1;j< lista.quantidade;j++){
-                comparacoes++;
-            if(strcmp(lista.info[i].valor,lista.info[j].valor) > 0){
-                troca= lista.info[j];
+    
+    ticks[0] = clock();
+    for (i = 0; i < lista.quantidade - 1; i++){
+        for (j= i + 1; j < lista.quantidade; j++) {
+            comparacoes++;
+            if (strcmp(lista.info[i].valor,lista.info[j].valor) > 0) {
+                troca = lista.info[j];
                 lista.info[j] = lista.info[i];
                 lista.info[i] = troca;
                 trocas++;
-
             }
         }
     }
-        ticks[1] = clock();
-        tempo = (ticks[1] - ticks[0]) * 1000.0 / CLOCKS_PER_SEC;
-        printf("\n**Lista ordenada pelo método Bubble Sort**\n");
-        imprimeListaPalavras(&lista);
-        printf("\t Tempo gasto: %.3f ms. \n", tempo);
-        printf("\t Núm aprox. de comparações feitas: %d. \n", comparacoes);
-        printf("\t Núm aprox. de trocas feitas: %d. \n", trocas);
+    
+    ticks[1] = clock();
+    tempo = (ticks[1] - ticks[0]) * 1000.0 / CLOCKS_PER_SEC;
+    
+    printf("\n**Lista ordenada pelo método Bubble Sort**\n");
+    
+    imprimeListaPalavras(&lista);
+    printf("\t Tempo gasto: %.3f ms. \n", tempo);
+    printf("\t Núm aprox. de comparações feitas: %d. \n", comparacoes);
+    printf("\t Núm aprox. de trocas feitas: %d. \n", trocas);
 
 }
 
-void shellsort(ListaDePalavras lista){
+// Imprime os dados de uma lista de palavras ordenados pelo método Shell Sort
+void shellSort(ListaDePalavras lista){
     clock_t ticks[2];
-    int h=1, i, j, trocas = 0, comparacoes = 0;
+    int h = 1, i, j, trocas = 0, comparacoes = 0;
     double tempo;
     Palavra troca;
     ticks[0] = clock();
-    do{
-        h=h*3 +1;
-    }while(h<lista.quantidade);
-    do{
-        h = h/3;
-        for( i = h; i < lista.quantidade; i++){
+    
+    do {
+        h = h * 3 + 1;
+    } while (h < lista.quantidade);
+
+    do {
+        h = h / 3;
+        for (i = h; i < lista.quantidade; i++) {
             troca = lista.info[i];
             j = i;
-            while(strcmp(lista.info[j - h].valor,troca.valor) > 0){
+            while (strcmp(lista.info[j - h].valor,troca.valor) > 0) {
                 lista.info[j] = lista.info[j - h];
                 j -= h;
                 comparacoes++;
-                if(j < h)
+                if (j < h)
                     break;
             }
             lista.info[j] = troca;
             trocas++;
         }
-    }while(h != 1);
+    } while(h != 1);
 
 
     ticks[1] = clock();
     tempo = (ticks[1] - ticks[0]) * 1000.0 / CLOCKS_PER_SEC;
     printf("\n**Lista ordenada pelo método Shell Sort**\n");
+    
     imprimeListaPalavras(&lista);
     printf("\t Tempo gasto: %.30f ms. \n", tempo);
     printf("\t Núm aprox. de comparações feitas: %d. \n", comparacoes);
@@ -237,33 +245,38 @@ void shellsort(ListaDePalavras lista){
 
 }
 
-void insertionsort(ListaDePalavras lista){
+// Imprime os dados de uma lista de palavras ordenados pelo método Insertion Sort
+void insertionSort(ListaDePalavras lista) {
     clock_t ticks[2];
     double tempo;
-    int i,j,trocas=0,comparacoes=0;
+    int i,j,trocas = 0,comparacoes = 0;
     Palavra troca;
     ticks[0] = clock();
-    for(i=1; i <lista.quantidade ; i++){
+    
+    for (i = 1; i < lista.quantidade; i++) {
         troca = lista.info[i];
         j = i - 1;
-        while( (j>=0) && (strcmp(lista.info[j].valor,troca.valor) > 0)){
-                lista.info[j + 1] = lista.info[j];
-                trocas++;
-                j--;
-                comparacoes++;
+        while((j>=0) && (strcmp(lista.info[j].valor,troca.valor) > 0)){
+            lista.info[j + 1] = lista.info[j];
+            trocas++;
+            j--;
+            comparacoes++;
         }
         lista.info[j+1] = troca;
         trocas++;
     }
+    
     ticks[1] = clock();
     tempo = (ticks[1] - ticks[0]) * 1000.0 / CLOCKS_PER_SEC;
+    
     printf("\n**Lista ordenada pelo método Insertion sort**\n");
+    
     imprimeListaPalavras(&lista);
     printf("\t Tempo gasto: %.30f ms. \n", tempo);
     printf("\t Núm aprox. de comparações feitas: %d. \n", comparacoes);
     printf("\t Núm aprox. de trocas feitas: %d. \n", trocas);
 }
 
-
-
-void heapsort(ListaDePalavras lista)
+// Imprime os dados de uma lista de palavras ordenados pelo método Heap Sort
+void heapSort(ListaDePalavras lista) {
+}

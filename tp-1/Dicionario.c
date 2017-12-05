@@ -193,16 +193,16 @@ int promptOrdenarLetraAlfabeto(Dicionario *dicionario) {
 
     switch (codigoOrdenacao) {
         case 0:
-            bubblesort(dicionario->letras[indiceLetraDesejada].listaPalavra);
+            bubbleSort(dicionario->letras[indiceLetraDesejada].listaPalavra);
             break;
         case 1:
             selectionSort(dicionario->letras[indiceLetraDesejada].listaPalavra);
             break;
         case 2:
-            insertionsort(dicionario->letras[indiceLetraDesejada].listaPalavra);
+            insertionSort(dicionario->letras[indiceLetraDesejada].listaPalavra);
             break;
         case 3:
-            shellsort(dicionario->letras[indiceLetraDesejada].listaPalavra);
+            shellSort(dicionario->letras[indiceLetraDesejada].listaPalavra);
             break;
         case 4:
             quickSort(dicionario->letras[indiceLetraDesejada].listaPalavra);
@@ -221,4 +221,30 @@ int promptOrdenarLetraAlfabeto(Dicionario *dicionario) {
 // Lê um método de ordenação de algoritmo para o dicionário completo
 void promptOrdenarDicionario(Dicionario *dicionario) {
     // Isso é por ultimo, é basicamente o metodo acima dentro de um loop, pra fazer todas as letras.
+    int i, codigoOrdenacao;
+    
+    codigoOrdenacao = promptMetodoOrdenacao();
+    
+    for (i = 0; i < 26; i++) {
+        switch (codigoOrdenacao) {
+            case 0:
+                bubbleSort(dicionario->letras[i].listaPalavra);
+                break;
+            case 1:
+                selectionSort(dicionario->letras[i].listaPalavra);
+                break;
+            case 2:
+                insertionSort(dicionario->letras[i].listaPalavra);
+                break;
+            case 3:
+                shellSort(dicionario->letras[i].listaPalavra);
+                break;
+            case 4:
+                quickSort(dicionario->letras[i].listaPalavra);
+                break;
+            case 5:
+                // CHAMADA PRA OPERACAO DE HEAP SORT
+                break;
+        }
+    }
 }

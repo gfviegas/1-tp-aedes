@@ -16,14 +16,14 @@ typedef struct {
 
 /**
  * Configura uma nova instância de uma variável do tipo Palavra e inicializa a lista de linhas
- * @method criaPalavraVazia
+ * @function criaPalavraVazia
  * @param  palavra          Ponteiro do tipo Palavra que será manipulado
  */
 void criaPalavraVazia(Palavra *palavra);
 
 /**
  * Preenche o struct Palavra com a string desejada
- * @method preencheCadeiaDeCaracteres
+ * @function preencheCadeiaDeCaracteres
  * @param  palavra                    Ponteiro do tipo Palavra que será manipulado
  * @param  preenchimento              String que se deseja preencher no struct
  */
@@ -31,21 +31,21 @@ void preencheCadeiaDeCaracteres(Palavra *palavra, char *preenchimento);
 
 /**
  * Imprime a string vinculada ao TAD
- * @method imprimeCadeiaDeCaracteres
+ * @function imprimeCadeiaDeCaracteres
  * @param  palavra                   Ponteiro do tipo Palavra que será manipulado
  */
 void imprimeCadeiaDeCaracteres(Palavra *palavra);
 
 /**
  * Imprime os dados de uma palavra
- * @method imprimePalavra
+ * @function imprimePalavra
  * @param  palavra        Ponteiro do tipo Palavra que será manipulado
  */
 void imprimePalavra(Palavra *palavra);
 
 /**
  * Retorna a string vinculada a uma palavra
- * @method retornaCadeiaDeCaracteres
+ * @function retornaCadeiaDeCaracteres
  * @param  palavra                   Ponteiro do tipo Palavra que será manipulado
  * @return                           String vinculada a uma palavra
  */
